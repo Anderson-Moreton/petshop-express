@@ -1,38 +1,5 @@
-* {
-    margin: 0;
-}
+@import './shared.css';
 
-body {
-    font-family: "Righteous", sans-serif;
-    background-color: #F7F9F7;
-    width: 100%;
-}
-
-header {
-    box-shadow: 0px 2px 20px 20px #312F2F;
-    position: fixed;
-    width: 100%;
-    background-color: #F8C537;
-    z-index: 1;
-    top: 0;
-    left: 0;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 8px;
-}
-
-header .menuCabecalho {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-}
-
-header .barraPesquisar {
-}
 
 main section.banner .container .logoHome img {
     width: 100%;
@@ -57,29 +24,4 @@ main section.sale .container article .venda img {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-footer {
-    background-color: #312F2F;
-    width: 100%;
-    color: white;
-}
-
-footer .logoOpa img {
-    width: 150px;
-    height: 150px;
-}
-
-footer .containerPe {
-    display: flex;
-    justify-content: space-between;
-}
-
-footer .containerPe .mapaSite {
-    display: flex;
-    flex-direction: column;
-}
-
-footer .containerPe .redesSociais {
-    
 }
