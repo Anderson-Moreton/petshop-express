@@ -14,10 +14,12 @@ a:visited, a:active {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 a:hover {
     text-decoration: underline;
+    color: white;
 }
 
 .no-bold {

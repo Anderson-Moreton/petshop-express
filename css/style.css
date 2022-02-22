@@ -29,3 +29,35 @@ main section.sale .container article .venda img {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+main section.sale .container article .info .details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main section.sale .container article .info .botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    font-family: "Righteous", sans-serif;
+    background-color: #F8C537;
+}
+
+.botao a {
+    color: #312F2F;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
