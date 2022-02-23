@@ -44,6 +44,8 @@ main section.sale .container article .info .botao {
 button {
     font-family: "Righteous", sans-serif;
     background-color: #F8C537;
+    width: 150px;
+    height: 30px;
 }
 
 .botao a {
