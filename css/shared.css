@@ -42,6 +42,7 @@ body .container {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    max-width: 1200px;
 }
 
 /* Header */
@@ -68,10 +69,16 @@ header .logo {
     margin-top: 10px;
 }
 
+.itemsMenu a {
+    color: #312F2F;
+    font-size: 20px;
+}
+
 header .menuCabecalho .itemsMenu {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    
 }
 
 header .menuCabecalho .barraPesquisar input {
