@@ -1,10 +1,15 @@
 @import url(shared.css);
 
-main section.banner .container .logoHome img {
+main section {
+    display: flex;
+    justify-content: center;
+}
+
+main section.banner  {
     width: 100%;
-    max-height: 800px;
-    margin-top: 150px;
+    margin-top: 5rem;
     margin-bottom: 15px;
+    height: 10rem;
 }
 
 main section.sale .container {
@@ -50,7 +55,14 @@ button {
     background-color: #F8C537;
     width: 150px;
     height: 30px;
-    border-radius: 5px;
+    border-radius: 30px;
+    border-width: 1px;
+    margin-bottom: 1rem;
+}
+
+.button-inverse {
+    background-color: #312F2F;
+    color: #F8C537;
 }
 
 .botao a {
@@ -61,6 +73,57 @@ button {
 }
 
 p {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+form input {
+    background-color: #FEF29A;
+    border-width: 1px;
+    border-radius: 30px;
+    font-family: "Righteous", sans-serif;
+    font-size: medium;
+    padding-inline: 1rem;
+}
+
+form label {
+    padding-left: 1rem;
+    margin-top: 0.8rem;
+}
+
+.style-image {
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 70%;
+}
+
+.style-title{
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    font-size: 3rem;
+    color: white;
+    text-shadow: black 2px 2px 20px;
+    text-align: center;
+    font-weight: lighter;
+    padding-block: 2.5rem;
 }
