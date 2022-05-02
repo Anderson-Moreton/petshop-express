@@ -21,26 +21,47 @@
                     <img src="img/logo+fundo_branco.svg" alt="Logo Opa com fundo branco">
                 </div>
                 <div class="menuCabecalho">
-                    <div class="itemsMenu">
-                        <div class="itemMenu">
-                            <a href="index.html">Home</a></div>
-                        <div class="itemMenu">
-                            <a href="cardapio.html">Cardápio</a></div>
-                        <div class="itemMenu">
-                            <a href="contato.html">Contato</a></div>
-                        <div class="itemMenu">
-                            <a href="quemsomos.html">Quem somos</a>
+                    <nav>
+                        <div class="itemsMenu">
+                            <div class="itemMenu">
+                                <a href="./index.html">Home</a>
+                            </div>
+                            <div class="itemMenu">
+                                <details>
+                                    <summary><a href="./cardapio.html">Cardápio</a></summary>
+                                    <ul>
+                                        <li>
+                                            <a href="burguer.html">Burguer's</a>
+                                        </li>
+                                        <li>
+                                            <a href="dog.html">Dog's</a>
+                                        </li>
+                                        <li>
+                                            <a href="porcoes.html">Porções</a>
+                                        </li>
+                                        <li>
+                                            <a href="bebidas.html">Bebidas</a>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </div>
+                            <div class="itemMenu">
+                                <a href="./contato.html">Contato</a>
+                            </div>
+                            <div class="itemMenu">
+                                <a href="./quemsomos.html">Quem somos</a>
+                            </div>
+                            <div class="itemMenu">
+                                <a href="./entre.html">Entre ou cadastre-se</a>
+                            </div>
+                            <div class="itemMenu">
+                                <a href="./carrinho.html">Meu carrinho</a>
+                            </div>
                         </div>
-                        <div class="itemMenu">
-                            <a href="entre.html">Entre ou cadastre-se</a>
-                        </div>
-                        <div class="itemMenu">
-                            <a href="carrinho.html">Meu carrinho</a>
-                        </div>
-                    </div>
+                    </nav>
                     <div class="barraPesquisar">
                         <form action="">
-                            <input type="text" placeholder="O que deseja?">
+                            <input type="text" placeholder="O que deseja?" autofocus>
                         </form>
                     </div>
                 </div>
@@ -49,7 +70,7 @@
     </header>
 
     <main>
-        
+
         <section class="banner">
             <div class="container">
                 <div class="logoHome">
@@ -69,7 +90,7 @@
         <section class="sale">
             <div class="container">
                 <article>
-                    <div class="venda">
+                    <div class="card">
                         <img src="img/venda1.svg" alt="">
                     </div>
                     <div class="info">
@@ -84,7 +105,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="venda">
+                    <div class="card">
                         <img src="img/venda2.svg" alt="">
                     </div>
                     <div class="info">
@@ -99,7 +120,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="venda">
+                    <div class="card">
                         <img src="img/venda3.svg" alt="">
                     </div>
                     <div class="info">
@@ -127,7 +148,7 @@
         <section class="sale">
             <div class="container">
                 <article>
-                    <div class="venda">
+                    <div class="card">
                         <img src="img/novid1.svg" alt="">
                     </div>
                     <div class="info">
@@ -142,7 +163,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="venda">
+                    <div class="card">
                         <img src="img/novid2.svg" alt="">
                     </div>
                     <div class="info">
@@ -157,7 +178,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="venda">
+                    <div class="card">
                         <img src="img/novid3.svg" alt="">
                     </div>
                     <div class="info">
@@ -173,6 +194,7 @@
                 </article>
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -186,26 +208,28 @@
                     <div class="mapaSite">
                         <h3 class="no-bold">Mapa do site</h3>
                         <br>
-                        <ul class="list-menu-footer">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="">Cardápio</a>
-                            </li>
-                            <li>
-                                <a href="quemsomos.html">Quem somos</a>
-                            </li>
-                            <li>
-                                <a href="contato.html">Contato</a>
-                            </li>
-                            <li>
-                                <a href="entre.html">Entre ou cadastre-se</a>
-                            </li>
-                            <li>
-                                <a href="carrinho.html">Meu carrinho</a>
-                            </li>
-                        </ul>
+                        <nav>
+                            <ul class="list-menu-footer">
+                                <li>
+                                    <a href="./index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="./cardapio.html">Cardápio</a>
+                                </li>
+                                <li>
+                                    <a href="./quemsomos.html">Quem somos</a>
+                                </li>
+                                <li>
+                                    <a href="./contato.html">Contato</a>
+                                </li>
+                                <li>
+                                    <a href="./entre.html">Entre ou cadastre-se</a>
+                                </li>
+                                <li>
+                                    <a href="./carrinho.html">Meu carrinho</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                     <div class="funcionamento">
                         <h3 class="no-bold">Horário de Funcionamento</h3>
@@ -217,20 +241,22 @@
                     <div class="redesSociais">
                         <h3 class="no-bold">Redes Sociais</h3>
                         <br>
-                        <ul class="list-menu-footer">
-                            <li>
-                                <a href="https://www.facebook.com/opadogburguer" target="_blank"><img
-                                        src="img/logoFace.svg" alt="Logo Facebook"></a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/opa_dogburguer/" target="_blank"><img
-                                        src="img/logoInsta.svg" alt="Logo Instagram"></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCN2ub6gO3V2c6D0H-CniqMg/featured"
-                                    target="_blank"><img src="img/logoYoutube.svg" alt="Logo Youtube"></a>
-                            </li>
-                        </ul>
+                        <nav>
+                            <ul class="list-menu-footer">
+                                <li>
+                                    <a href="https://www.facebook.com/opadogburguer" target="_blank"><img
+                                            src="img/logoFace.svg" alt="Logo Facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/opa_dogburguer/" target="_blank"><img
+                                            src="img/logoInsta.svg" alt="Logo Instagram"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCN2ub6gO3V2c6D0H-CniqMg/featured"
+                                        target="_blank"><img src="img/logoYoutube.svg" alt="Logo Youtube"></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

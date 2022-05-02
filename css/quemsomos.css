@@ -1,4 +1,4 @@
-@import './shared.css';
+@import url(shared.css);
 
 main section.banner .container .logoHome img {
     width: 100%;
@@ -14,7 +14,6 @@ main section.banner .container .logoHome img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: -160px;
 }
 
 main .container .row .quemSomos .nossaHistoria {
@@ -37,3 +36,5 @@ main .container .row .quemSomos .nossaHistoria h2 {
 main .container .row .quemSomos .nossaHistoria p {
     margin: 15px;
 }
+
+

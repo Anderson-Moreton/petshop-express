@@ -1,4 +1,4 @@
-@import './shared.css';
+@import url(shared.css);
 
 .fotoPrincipal {
     margin-top: 100px;

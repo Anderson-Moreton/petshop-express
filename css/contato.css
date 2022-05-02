@@ -1,4 +1,4 @@
-@import './shared.css';
+@import url(shared.css);
 
 main section.banner .container .logoHome img {
     width: 100%;
