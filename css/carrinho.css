@@ -1,7 +1,6 @@
 @import url(shared.css);
-
-main section.banner .container .logoHome img {
+.banner img{
     width: 100%;
-    max-height: 800px;
     margin-top: 150px;
+
 }
