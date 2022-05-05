@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/entre.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Opa Dog e Burguer</title>
 </head>
 
@@ -34,7 +36,7 @@
                             <a href="quemsomos.html">Quem somos</a>
                         </div>
                         <div class="itemMenu">
-                            <a href="entre.html">Entre ou cadastre-se</a>
+                            <a href="entre.html">Entrar</a>
                         </div>
                         <div class="itemMenu">
                             <a href="carrinho.html">Meu carrinho</a>
@@ -44,21 +46,34 @@
             </div>
         </div>
     </header>
-
-    <main>
-
+    <main style="">
         <section class="banner">
+            <img class="style-image" src="img/entreCadastrese.jpg" alt="">
+            <p class="style-title">Entrar</p>
+        </section>
+        <section>
             <div class="container">
-                <div class="logoHome">
-                    <img src="img/imagemHome.svg" alt="">
-                </div>
+                <form method="post">
+                    <div class="form-section">
+                        <div class="column-box">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" />
+                        </div>
+                        <div class="column-box">
+                            <label for="password">Senha</label>
+                            <input type="password" name="password" />
+                        </div>
+                    </div>
+                    <div class="row-box">
+                        <button type="submit">Entrar</button>
+                        <button type="button" class="button-inverse"
+                            onclick="location.href='cadastro.html';">Cadastre-se</button>
+                    </div>
+                </form>
             </div>
         </section>
-
     </main>
-
     <footer>
-
         <div class="container">
             <div class="row">
                 <div class="logoOpa">
@@ -83,7 +98,7 @@
                                     <a href="./contato.html">Contato</a>
                                 </li>
                                 <li>
-                                    <a href="./entre.html">Entre ou cadastre-se</a>
+                                    <a href="./entre.html">Entrar</a>
                                 </li>
                                 <li>
                                     <a href="./carrinho.html">Meu carrinho</a>
@@ -94,9 +109,9 @@
                     <div class="funcionamento">
                         <h3 class="no-bold">Horário de Funcionamento</h3>
                         <br>
-                        <p>Segunda à Quinta <br> 18:00 às 00:00</p>
+                        <a>Segunda à Quinta <br> 18:00 às 00:00</a>
                         <br>
-                        <p>Sexta à Domingo <br> 18:00 às 02:00</p>
+                        <a>Sexta à Domingo <br> 18:00 às 02:00</a>
                     </div>
                     <div class="redesSociais">
                         <h3 class="no-bold">Redes Sociais</h3>
@@ -121,9 +136,7 @@
                 </div>
             </div>
         </div>
-
     </footer>
-
 </body>
 
 </html>
