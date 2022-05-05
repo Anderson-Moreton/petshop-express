@@ -58,6 +58,16 @@ button {
     border-radius: 30px;
     border-width: 1px;
     margin-bottom: 1rem;
+    transition-property: background-color;
+    transition-duration: 100ms;
+}
+
+button:hover {
+    background-color: #d49c02;
+}
+
+button.button-inverse:hover {
+    background-color: #4e4e4e;
 }
 
 .button-inverse {
