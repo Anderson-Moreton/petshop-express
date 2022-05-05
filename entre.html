@@ -8,10 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/entre.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Opa Dog e Burguer</title>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -34,7 +36,7 @@
                             <a href="quemsomos.html">Quem somos</a>
                         </div>
                         <div class="itemMenu">
-                            <a href="entre.html">Entre ou cadastre-se</a>
+                            <a href="entre.html">Entrar</a>
                         </div>
                         <div class="itemMenu">
                             <a href="carrinho.html">Meu carrinho</a>
@@ -52,13 +54,20 @@
         <section>
             <div class="container">
                 <form method="post">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" />
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" />
-                    <div class="horizontal">
+                    <div class="form-section">
+                        <div class="column-box">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" />
+                        </div>
+                        <div class="column-box">
+                            <label for="password">Senha</label>
+                            <input type="password" name="password" />
+                        </div>
+                    </div>
+                    <div class="row-box">
                         <button type="submit">Entrar</button>
-                        <button type="button" class="button-inverse" onclick="location.href='cadastro.html';">Cadastre-se</button>
+                        <button type="button" class="button-inverse"
+                            onclick="location.href='cadastro.html';">Cadastre-se</button>
                     </div>
                 </form>
             </div>
@@ -89,7 +98,7 @@
                                     <a href="./contato.html">Contato</a>
                                 </li>
                                 <li>
-                                    <a href="./entre.html">Entre ou cadastre-se</a>
+                                    <a href="./entre.html">Entrar</a>
                                 </li>
                                 <li>
                                     <a href="./carrinho.html">Meu carrinho</a>

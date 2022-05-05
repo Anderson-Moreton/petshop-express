@@ -30,11 +30,6 @@ body .row {
     height: 5rem;
 }
 
-body .container {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 /* Header */
 
 header {
