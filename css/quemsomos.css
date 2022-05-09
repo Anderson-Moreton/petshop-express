@@ -1,40 +1,41 @@
 @import url(shared.css);
 
-main section.banner .container .logoHome img {
-    width: 100%;
-    margin-top: 150px;
-}
-
-.logoQuemSomos img {
-    width: 300px;
-    height: 800px;
-}
-
-.quemSomos {
+.history {
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
-main .container .row .quemSomos .nossaHistoria {
+.logoHistory {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.logoHistory img {
+    height: 500px;
+}
+
+.ourHistory {
+    background-color: #FEF29A;
+    height: 456px;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 40px;
+    padding: 20px;
+}
+
+.ourHistory h1 {
+    font-size: 30px;
+    margin-top: 20px;
+
+}
+
+.ourHistory h2 {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.ourHistory p {
+    font-size: 18px;
     text-align: justify;
-    margin-left: 15px;
+    margin-top: 20px;
 }
-
-main .container .row .quemSomos .nossaHistoria h1 {
-    text-align: left;
-    margin-left: 15px;
-    margin-bottom: 5px;
-}
-
-main .container .row .quemSomos .nossaHistoria h2 {
-    text-align: left;
-    margin-left: 15px;
-    margin-bottom: 5px;
-}
-
-main .container .row .quemSomos .nossaHistoria p {
-    margin: 15px;
-}
-
-
