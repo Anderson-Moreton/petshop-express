@@ -15,35 +15,7 @@
 <body>
 
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="logo">
-                    <img src="img/logo+fundo_branco.svg" alt="Logo Opa com fundo branco">
-                </div>
-                <div class="menuCabecalho">
-                    <div class="itemsMenu">
-                        <div class="itemMenu">
-                            <a href="index.html">Home</a>
-                        </div>
-                        <div class="itemMenu">
-                            <a href="cardapio.html">Cardápio</a>
-                        </div>
-                        <div class="itemMenu">
-                            <a href="contato.html">Contato</a>
-                        </div>
-                        <div class="itemMenu">
-                            <a href="quemsomos.html">Quem somos</a>
-                        </div>
-                        <div class="itemMenu">
-                            <a href="entre.html">Entrar</a>
-                        </div>
-                        <div class="itemMenu">
-                            <a href="carrinho.html">Meu carrinho</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <%-include ('./partials/header')  %>
     </header>
 
     <main>
@@ -53,127 +25,66 @@
             <p class="style-title">Meu Carrinho</p>
         </section>
 
-<section class="container"> 
-    <div>
-        <div>
-            <img src="./img/burguer01.jpg" alt="Hamburguer">
-        </div>
-        <div>
-            <h3>X-Burguer</h3>
-            <p>Pãp tradicional, Burguer, Queijo e Maionese</p>
-        </div>
-        <div>
-            <p> - 1 + </p>
-        </div>
-    </div> 
-    
-    <div>
-        <h3>Calcular taxa e tempo de entrega</h3>
-        <div>
-            <form action="">
-                <label for="">Cep</label>
-                <input type="text">
-                <button type="submit">Calcular</button>
-            </form>  
-        </div>
-        <div>
+        <section class="container">
             <div>
-            <p>Normal</p>
-            <p>40 Minutos</p>
-        </div>
-        <div>
-            <p>Agendada</p>
-            <p>18:30</p>
-        </div>
-        </div>
-    </div>
+                <div>
+                    <img src="./img/burguer01.jpg" alt="Hamburguer">
+                </div>
+                <div>
+                    <h3>X-Burguer</h3>
+                    <p>Pãp tradicional, Burguer, Queijo e Maionese</p>
+                </div>
+                <div>
+                    <p> - 1 + </p>
+                </div>
+            </div>
 
-    <div>
-        <div>
-        <p>1 Produto</p>
-        <p>R$15,00</p>
-    </div>
-    <div>
-        <p>Taxa de entrega</p>
-        <p>R$2,00</p>
-    </div>
-    <div>
-        <h3>Total</h3>
-        <h3>R$ 17.00</h3>
-    </div>
-    <button type="submit">Pagar Agora!</button>
-    <p>comprar mais produtos</p>
-    </div>
+            <div>
+                <h3>Calcular taxa e tempo de entrega</h3>
+                <div>
+                    <form action="">
+                        <label for="">Cep</label>
+                        <input type="text">
+                        <button type="submit">Calcular</button>
+                    </form>
+                </div>
+                <div>
+                    <div>
+                        <p>Normal</p>
+                        <p>40 Minutos</p>
+                    </div>
+                    <div>
+                        <p>Agendada</p>
+                        <p>18:30</p>
+                    </div>
+                </div>
+            </div>
 
-</section>
+            <div>
+                <div>
+                    <p>1 Produto</p>
+                    <p>R$15,00</p>
+                </div>
+                <div>
+                    <p>Taxa de entrega</p>
+                    <p>R$2,00</p>
+                </div>
+                <div>
+                    <h3>Total</h3>
+                    <h3>R$ 17.00</h3>
+                </div>
+                <button type="submit">Pagar Agora!</button>
+                <p>comprar mais produtos</p>
+            </div>
+
+        </section>
 
 
     </main>
 
     <footer>
 
-        <div class="container">
-            <div class="row">
-                <div class="logoOpa">
-                    <img src="img/logoOpa.png" alt="Logo Opa Dog e Burguer">
-                </div>
-                <div class="menu-mapa">
-                    <div class="mapaSite">
-                        <h3 class="no-bold">Mapa do site</h3>
-                        <br>
-                        <nav>
-                            <ul class="list-menu-footer">
-                                <li>
-                                    <a href="./index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="./cardapio.html">Cardápio</a>
-                                </li>
-                                <li>
-                                    <a href="./quemsomos.html">Quem somos</a>
-                                </li>
-                                <li>
-                                    <a href="./contato.html">Contato</a>
-                                </li>
-                                <li>
-                                    <a href="./entre.html">Entrar</a>
-                                </li>
-                                <li>
-                                    <a href="./carrinho.html">Meu carrinho</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="funcionamento">
-                        <h3 class="no-bold">Horário de Funcionamento</h3>
-                        <br>
-                        <p>Segunda à Quinta <br> 18:00 às 00:00</p>
-                        <br>
-                        <p>Sexta à Domingo <br> 18:00 às 02:00</p>
-                    </div>
-                    <div class="redesSociais">
-                        <h3 class="no-bold">Redes Sociais</h3>
-                        <br>
-                        <nav>
-                            <ul class="list-menu-footer">
-                                <li>
-                                    <a href="https://www.facebook.com/opadogburguer" target="_blank"><img
-                                            src="img/logoFace.svg" alt="Logo Facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/opa_dogburguer/" target="_blank"><img
-                                            src="img/logoInsta.svg" alt="Logo Instagram"></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/channel/UCN2ub6gO3V2c6D0H-CniqMg/featured"
-                                        target="_blank"><img src="img/logoYoutube.svg" alt="Logo Youtube"></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <%-include ('./partials/footer')  %>
 
     </footer>
 
