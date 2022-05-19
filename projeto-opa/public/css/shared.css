@@ -60,12 +60,11 @@ header .menuCabecalho .barraPesquisar input {
 
 a {
     text-decoration: none;
-    transition: 1s;
+    transition: 500ms;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: white;
+    color: rgb(193, 193, 193);
 }
 
 /* Body Rafael Ladino*/ 
@@ -153,6 +152,12 @@ p {
     text-align: center;
 }
 
+.label-description {
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
 .row-box {
     display: flex;
     flex-direction: row;
@@ -200,6 +205,24 @@ form label {
 form span {
     font-weight: 600;
     font-size: large;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    padding: 1rem;
+}
+
+
+.left-content {
+    display: flex;
+    justify-content: left; 
+}
+
+.align-top {
+    display: flex;
+    align-items: flex-start;
 }
 
 /* Footer */
@@ -259,4 +282,5 @@ footer .container {
 footer .row {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 100%;
+}
