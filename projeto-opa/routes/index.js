@@ -12,7 +12,11 @@ router.get('/contato', generalController.contato);
 router.get('/quemsomos', generalController.quemsomos);
 /*Entrar*/
 router.get('/entrar', generalController.entre);
+/*Cadastrar*/
+router.get('/cadastro', generalController.cadastro);
 /*Meu Carrinho*/
 router.get('/carrinho', generalController.carrinho);
+/*Acompanhar pedido*/ 
+router.get('/pedido', generalController.pedido);
 
 module.exports = router;

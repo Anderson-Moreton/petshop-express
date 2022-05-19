@@ -5,3 +5,79 @@ main section.banner .container .logoHome img {
     max-height: 800px;
     margin-top: 150px;
 }
+
+.order-container {
+    display: flex;
+    background-color: #FEF29A;
+    border-radius: 15px;
+    width: max-content;
+}
+
+.order-step-element {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+    padding-block: 0.5rem;
+    gap: 1rem;
+    align-items: center;
+    border-left: #464646 1px solid;
+}
+
+.order-step-symbol {
+    display: flex;
+    padding: 1rem;
+    border-radius: 50%;
+    position: relative;
+    right: 6%;
+    border: #464646 1px solid;
+}
+
+.symbol-empty {
+    background-color: #FEF29A;
+}
+
+.symbol-fill {
+    background-color: #464646;
+}
+
+.order-steps {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.order-container-title{
+    display: flex;
+    word-wrap: unset;
+    width: max-content;
+    padding: 1rem;
+    padding-inline: 2rem;
+}
+
+.line {
+    background-color: #464646;
+    height: 100%;
+}
+
+.order-element {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+.order-element-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+.order-element-icon img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

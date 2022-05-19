@@ -19,9 +19,17 @@ const generalController = {
         const context = {}
         res.render('entre', context);
     },
+    cadastro: (req, res) => {
+        const context = {}
+        res.render('cadastro', context);
+    },
     carrinho: (req, res) => {
         const context = {}
         res.render('carrinho', context);
+    },
+    pedido: (req, res) => {
+        const context = {}
+        res.render('pedido', context);
     }
 }
 

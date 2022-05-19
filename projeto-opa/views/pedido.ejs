@@ -8,33 +8,124 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pedido.css">
+    <link rel="stylesheet" href="css/shared.css">
     <title>Opa Dog e Burguer</title>
 </head>
 
 <body>
     <header>
-        <%-include ('./partials/header')  %>
+        <%-include ('./partials/header') %>
     </header>
-
     <main>
-
         <section class="banner">
-            <div class="container">
-                <div class="logoHome">
-                    <img src="img/imagemHome.svg" alt="">
-                </div>
-            </div>
+            <img class="style-image" src="img/pagamentos.jpg" alt="">
+            <p class="style-title">Acompanhar pedido</p>
         </section>
-
+        <section>
+            <div class="container">
+                <div class="row-box align-top">
+                    <div class="column-box order-container">
+                        <p class="order-container-title">
+                            Status do Pedido
+                        </p>
+                        <div class="center-content">
+                            <div class="line"></div>
+                            <div class="column-box left-content">
+                                <div class="order-step-element">
+                                    <div class="order-step-symbol symbol-fill">
+                                    </div>
+                                    <div class="column-box">
+                                        <a>Pedido efetuado</a>
+                                        <a class="label-description"> 21/06/2022 21:40h </a>
+                                    </div>
+                                </div>
+                                <div class="order-step-element">
+                                    <div class="order-step-symbol symbol-fill">
+                                    </div>
+                                    <div class="column-box">
+                                        <a>Aguardando pagamento</a>
+                                        <a class="label-description"> 21/06/2022 21:40h </a>
+                                    </div>
+                                </div>
+                                <div class="order-step-element">
+                                    <div class="order-step-symbol symbol-fill">
+                                    </div>
+                                    <div class="column-box">
+                                        <a>Pagamento efetuado</a>
+                                        <a class="label-description"> 21/06/2022 21:40h </a>
+                                    </div>
+                                </div>
+                                <div class="order-step-element">
+                                    <div class="order-step-symbol symbol-fill">
+                                    </div>
+                                    <div class="column-box">
+                                        <a>Pedido em preparo</a>
+                                        <a class="label-description"> 21/06/2022 21:40h </a>
+                                    </div>
+                                </div>
+                                <div class="order-step-element">
+                                    <div class="order-step-symbol symbol-empty">
+                                    </div>
+                                    <div class="column-box">
+                                        <a>Saiu para entrega</a>
+                                        <a class="label-description"> 21/06/2022 21:40h </a>
+                                    </div>
+                                </div>
+                                <div class="order-step-element">
+                                    <div class="order-step-symbol symbol-empty">
+                                    </div>
+                                    <div class="column-box">
+                                        <a>Entrega recebida</a>
+                                        <a class="label-description"> 21/06/2022 21:40h </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-box">
+                        <div class="column-box">
+                            <p class="order-container-title">
+                                Resumo do Pedido
+                            </p>
+                            <div class="center-content">
+                                <div class="column-box left-content">
+                                    <div class="order-element">
+                                        <div class="order-element-icon">
+                                            <img src="img/burguer.jpg" />
+                                        </div>
+                                        <a>X Burger</a>
+                                        <a>R$ 18,90</a>
+                                    </div>
+                                    <div class="order-element">
+                                        <div class="order-element-icon">
+                                            <img src="img/burguer.jpg" />
+                                        </div>
+                                        <a>X Burger</a>
+                                        <a>R$ 18,90</a>
+                                    </div>
+                                    <div class="order-element">
+                                        <div class="order-element-icon">
+                                            <img src="img/dog03.jpg" />
+                                        </div>
+                                        <a>X Burger</a>
+                                        <a>R$ 18,90</a>
+                                    </div>
+                                    <div class="order-element">
+                                        <a>Total</a>
+                                        <a>R$ 18,90</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </main>
-
     <footer>
-
-        <%-include ('./partials/footer')  %>
-
+        <%-include ('./partials/footer') %>
     </footer>
-
 </body>
 
 </html>
