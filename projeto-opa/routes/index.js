@@ -5,7 +5,7 @@ var router = express.Router();
 /*Rota Index*/
 router.get('/', generalController.index);
 /*Cardapio*/
-router.get('/cardapio', generalController.cardapio);
+// router.get('/cardapio', generalController.cardapio);
 /*Contato*/
 router.get('/contato', generalController.contato);
 /*Quem Somos*/

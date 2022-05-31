@@ -3,10 +3,7 @@ const generalController = {
         const context = {}
         res.render('index', context);
     },
-    cardapio: (req, res) => {
-        const context = {}
-        res.render('cardapio', context);
-    },
+   
     contato: (req, res) => {
         const context = {}
         res.render('contato', context);
