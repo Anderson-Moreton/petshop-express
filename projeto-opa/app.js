@@ -26,6 +26,8 @@ app.use('/contato', indexRouter);
 app.use('/quemsomos', indexRouter);
 app.use('/entrar', indexRouter);
 app.use('/carrinho', indexRouter);
+app.use('/admproduct', indexRouter);
+app.use('/admstock', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
