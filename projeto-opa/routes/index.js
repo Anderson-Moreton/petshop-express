@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const generalController = require('../controllers/main');
 const menuController = require('../controllers/menu');
 const contactController = require('../controllers/contact');
@@ -10,7 +10,7 @@ const productController = require('../controllers/product');
 const stockController = require('../controllers/stock');
 
 /*Home*/
-router.get('/', generalController.index);
+router.get('/', generalController.home);
 
 /*Menu*/
 router.get('/cardapio', menuController.cardapio);

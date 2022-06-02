@@ -15,6 +15,14 @@ const userController = {
 
         res.redirect('/');
     },
+    register: (req, res) => {
+        const { email, password } = req.body;
+        req.session.loggedUser = true;
+        req.session.email = email;
+        req.session.password = password;
+
+        res.redirect('/');
+    },
     logout: (req, res) => {
         req.session.loggedUser = false;
         req.session.email = null;
