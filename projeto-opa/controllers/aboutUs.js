@@ -1,7 +1,7 @@
 const whoController = {
     quemsomos: (req, res) => {
         const context = {}
-        res.render('quemsomos', context);
+        res.render('aboutUs', context);
     }
 }
 

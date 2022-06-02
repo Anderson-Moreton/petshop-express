@@ -1,7 +1,7 @@
 const contactController = {
     contato: (req, res) => {
         const context = {}
-        res.render('contato', context);
+        res.render('contact', context);
     }
 }
 
