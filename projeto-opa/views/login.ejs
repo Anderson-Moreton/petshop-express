@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <%-include ('./partials/header')  %>
+        <%-include ('./partials/header') %>
     </header>
     <main style="">
         <section class="banner">
@@ -25,7 +25,7 @@
         </section>
         <section>
             <div class="container">
-                <form method="post">
+                <form method="post" action="/user/login">
                     <div class="form-section">
                         <div class="column-box">
                             <label for="email">Email</label>
@@ -38,14 +38,15 @@
                     </div>
                     <div class="row-box">
                         <button type="submit">Entrar</button>
-                        <button type="button" class="button-inverse" onclick="location.href='cadastro.html';">Cadastre-se</button>
+                        <button type="button" class="button-inverse"
+                            onclick="location.href='cadastrar'">Cadastre-se</button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
     <footer>
-        <%-include ('./partials/footer')  %>
+        <%-include ('./partials/footer') %>
 
     </footer>
 </body>

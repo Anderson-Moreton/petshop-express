@@ -1,29 +1,40 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const generalController = require('../controllers/main');
 const menuController = require('../controllers/menu');
 const contactController = require('../controllers/contact');
-const whoController = require('../controllers/who');
-const loginController = require('../controllers/login');
+const aboutUsController = require('../controllers/aboutUs');
+const { userController, loggedUser } = require('../controllers/user');
 const cartController = require('../controllers/cart');
 const productController = require('../controllers/product');
 const stockController = require('../controllers/stock');
 
-/*Rota Index*/
-router.get('/', generalController.index);
-/*Cardapio*/
+/*Home*/
+router.get('/', generalController.home);
+
+/*Menu*/
 router.get('/cardapio', menuController.cardapio);
-/*Contato*/
+
+/*Contact*/
 router.get('/contato', contactController.contato);
-/*Quem Somos*/
-router.get('/quemsomos', whoController.quemsomos);
-/*Entrar*/
-router.get('/entrar', loginController.entrar);
-/*Meu Carrinho*/
-router.get('/carrinho', cartController.carrinho);
-/*Adm Produtos*/
+
+/*About Us*/
+router.get('/quemsomos', aboutUsController.quemsomos);
+
+/*Authentication*/
+router.get('/entrar', userController.loginPage);
+router.get('/registrar', userController.registerPage);
+router.post('/user/login', userController.login);
+router.post('/user/register', userController.register);
+router.get('/user/logout', userController.logout);
+
+/*Cart*/
+router.get('/carrinho', loggedUser, cartController.carrinho);
+
+/*Adm Products*/
 router.get('/admproduct', productController.admproduct);
-/*Adm Estoque*/
+
+/*Adm Stock*/
 router.get('/admstock', stockController.admstock);
 
 module.exports = router;
