@@ -28,6 +28,11 @@ app.use('/', indexRouter);
 app.use('/menu', menuRouter);
 app.use('/admin', adminRouter);
 
+app.use('/contato', indexRouter);
+app.use('/quemsomos', indexRouter);
+app.use('/entrar', indexRouter);
+app.use('/carrinho', indexRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
