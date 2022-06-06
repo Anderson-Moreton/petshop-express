@@ -12,8 +12,7 @@ const stockController = require('../controllers/stock');
 /*Home*/
 router.get('/', generalController.home);
 
-/*Menu*/
-router.get('/cardapio', menuController.cardapio);
+
 
 /*Contact*/
 router.get('/contato', contactController.contato);

@@ -4,7 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+
 const indexRouter = require('./routes/index');
+const menuRouter = require('./routes/menu') 
 
 const app = express();
 
@@ -20,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: "segredo" }))
 
 app.use('/', indexRouter);
-app.use('/cardapio', indexRouter);
+app.use('/menu', menuRouter);
 app.use('/contato', indexRouter);
 app.use('/quemsomos', indexRouter);
 app.use('/entrar', indexRouter);
