@@ -12,8 +12,6 @@ const stockController = require('../controllers/stock');
 /*Home*/
 router.get('/', generalController.home);
 
-
-
 /*Contact*/
 router.get('/contato', contactController.contato);
 
