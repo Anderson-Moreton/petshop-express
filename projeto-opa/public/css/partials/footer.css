@@ -1,0 +1,61 @@
+@import url(shared.css);
+
+footer {
+    font-family: "Righteous", sans-serif;
+    background-color: #312F2F;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+}
+
+footer .logoOpa img {
+    height: 150px;
+}
+
+footer .logoOpa {
+    padding: 25px;
+    padding-left: 10px;
+}
+
+footer .list-menu-footer a {
+    color: white;
+}
+footer .list-menu-footer {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer .menu-mapa {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer .menu-mapa .funcionamento {
+    text-align: center;
+}
+
+footer .redesSociais {
+    text-align: center;
+}
+
+footer .redesSociais .list-menu-footer {
+    display: inline-flex;
+}
+
+footer .redesSociais .list-menu-footer li {
+    padding: 10px
+}
+
+footer .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: fit-content;
+}
+
+footer .row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
