@@ -6,7 +6,7 @@ const logger = require('morgan');
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
-const menuRouter = require('./routes/menu') 
+const menuRouter = require('./routes/menu')
 
 const app = express();
 
@@ -23,10 +23,6 @@ app.use(session({ secret: "segredo" }))
 
 app.use('/', indexRouter);
 app.use('/menu', menuRouter);
-app.use('/contato', indexRouter);
-app.use('/quemsomos', indexRouter);
-app.use('/entrar', indexRouter);
-app.use('/carrinho', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
