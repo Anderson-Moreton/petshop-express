@@ -1,143 +1,12 @@
-@import url(shared.css);
-
-main section.sale .container {
-    display: flex;
-}
-
-h2 {
-    margin: 25px;
-    font-size: 30px;
-}
-
-main section.sale .container article {
-    width: 350px;
-    height: 350px;
-    background-color: #CEDADA;
-    color: #312F2F;
-    border: 1px solid #312F2F;
-    border-radius: 6px;
-    margin: 20px auto 20px auto;
-}
-
-main section.sale .container article .card img {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-main section.sale .container article .info .details {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-main section.sale .container article .info .botao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 * {
     margin: 0;
 }
 
-a:visited, a:active {
-    color: white;
+main {
+    margin-block-end: 3rem;
 }
-
-.no-bold {
-    font-weight: normal;
-}
-
-.box-flex {
+main section.sale .container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-/* Header */
-
-header {
-    font-family: "Righteous", sans-serif;
-    box-shadow: 0px 2px 20px 4px rgba(0, 0, 0, .5);
-    position: fixed;
-    width: 100%;
-    background-color: #F8C537;
-    z-index: 1;
-    top: 0;
-    left: 0;
-}
-
-header .menuCabecalho {
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    padding-inline: 2rem;
-    flex-direction: column;
-    justify-content: center;
-}
-
-header .logo {
-    margin-top: 10px;
-    position: relative;
-}
-
-.itemsMenu a {
-    color: #312F2F;
-    font-size: 20px;
-}
-
-header .menuCabecalho .itemsMenu {
-    display: flex;
-    justify-content: space-around;
-    
-}
-
-header .menuCabecalho .barraPesquisar input {
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
-    transition: 1s;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: white;
-}
-
-/* Body Rafael Ladino*/ 
-
-body {
-    font-family: "Righteous", sans-serif;
-} 
-
-body .row {
-    display: flex;
-    width: 100%;
-    height: 5rem;
-}
-
-.style-image {
-    width: 100%;
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 70%;
-}
-
-.style-title{
-    position: absolute;
-    width: 100%;
-    height: fit-content;
-    font-size: 3rem;
-    color: white;
-    text-shadow: black 2px 2px 20px;
-    text-align: center;
-    font-weight: lighter;
-    padding-block: 2.5rem;
 }
 
 main section {
@@ -150,67 +19,6 @@ main section.banner  {
     margin-top: 5rem;
     margin-bottom: 15px;
     height: 10rem;
-}
-
-button {
-    font-family: "Righteous", sans-serif;
-    font-size: medium;
-    background-color: #F8C537;
-    width: 150px;
-    height: 30px;
-    border-radius: 30px;
-    border-width: 1px;
-    margin-bottom: 1rem;
-    transition-property: background-color;
-    transition-duration: 100ms;
-}
-
-button:hover {
-    background-color: #d49c02;
-}
-
-button.button-inverse:hover {
-    background-color: #4e4e4e;
-}
-
-.button-inverse {
-    background-color: #312F2F;
-    color: #F8C537;
-}
-
-.botao a {
-    color: #312F2F;
-    text-decoration: underline;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-p {
-    font-size: 2rem;
-    font-weight: 200;
-    width: 100%;
-    text-align: center;
-}
-
-.row-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-}
-
-.column-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-block: 0.5rem;
-}
-
-.form-section {
-    margin-block: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 form {
@@ -241,62 +49,148 @@ form span {
     font-size: large;
 }
 
-/* Footer */
+h2 {
+    margin: 25px;
+    font-size: 30px;
+}
 
-footer {
-    font-family: "Righteous", sans-serif;
-    background-color: #312F2F;
+p {
+    font-size: 2rem;
+    font-weight: 200;
     width: 100%;
-    color: white;
-    margin-top: 20px;
+    text-align: center;
 }
 
-footer .logoOpa img {
-    height: 150px;
-}
+body {
+    font-family: "Righteous", sans-serif;
+} 
 
-footer .logoOpa {
-    padding: 25px;
-    padding-left: 10px;
-}
-
-
-footer .list-menu-footer {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-footer .menu-mapa {
+body .row {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    height: 5rem;
 }
 
-footer .menu-mapa .funcionamento {
-    text-align: center;
+button {
+    font-family: "Righteous", sans-serif;
+    font-size: medium;
+    background-color: #F8C537;
+    height: 2rem;
+    border-radius: 30px;
+    border-width: 1px;
+    margin-bottom: 1rem;
+    transition-property: background-color;
+    transition-duration: 100ms;
+    padding-inline: 1rem;
 }
 
-footer .redesSociais {
-    text-align: center;
+button:hover {
+    background-color: #d49c02;
 }
 
-footer .redesSociais .list-menu-footer {
-    display: inline-flex;
+button.button-inverse:hover {
+    background-color: #4e4e4e;
 }
 
-footer .redesSociais .list-menu-footer li {
-    padding: 10px
+.no-bold {
+    font-weight: normal;
 }
 
-footer .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.box-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.style-image {
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 70%;
+}
+
+.style-title{
+    position: absolute;
+    width: 100%;
     height: fit-content;
+    font-size: 3rem;
+    color: white;
+    text-shadow: black 2px 2px 20px;
+    text-align: center;
+    font-weight: lighter;
+    padding-block: 2.5rem;
 }
 
-footer .row {
+.button-inverse {
+    background-color: #312F2F;
+    color: #F8C537;
+}
+
+.botao a {
+    color: #312F2F;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.row-box {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.column-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 0.5rem;
+}
+
+.form-section {
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-offer-image {
+    width: 20rem;
     height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.product-offer-container {
+    background-color: #CEDADA;
+    color: #312F2F;
+    border: 1px solid #312F2F;
+    border-radius: 6px;
+    height: min-content;
+}
+
+.product-offer-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+.product-offer-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    bottom: -2rem;
+    height: min-content;
+}
+
+.button-secondary {
+    background-color: #FEF29A;
 }
