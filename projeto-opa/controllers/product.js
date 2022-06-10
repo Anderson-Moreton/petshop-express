@@ -1,9 +1,5 @@
 const fs = require('fs');
-const path = require('path');
 const { Op } = require("sequelize");
-const productCategory = require('../data/productsCategories');
-const productsDatabasePath = path.join(__dirname, '../data/productsDatabase.json');
-const products = JSON.parse(fs.readFileSync(productsDatabasePath, 'utf-8'));
 const db = require('../models')
 
 const productDataParser = (newProductId, productData) => {
