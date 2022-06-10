@@ -1,0 +1,23 @@
+<article>
+    <div class="product-offer-container">
+        <div>
+            <img class="product-offer-image" src=" <%- productImage && productImage %>" alt="">
+        </div>
+        <div class="product-offer-details">
+            <h3>
+                <% if (productName) { %>
+                    <%= productName %>
+                        <% } %>
+            </h3>
+            <h3>
+                <% if (price) { %>
+                    R$ <%= price %>
+                        <% } %>
+            </h3>
+        </div>
+        <div class="product-offer-button">
+            <button class="button-secondary" type="button">Ver detalhes</button>
+            <button type="submit">Adicionar</button>
+        </div>
+    </div>
+</article>
