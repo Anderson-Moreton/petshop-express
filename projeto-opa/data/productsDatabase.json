@@ -1,0 +1,42 @@
+{
+    "1": {
+        "name": "X-Burguer Duplo",
+        "price": 26.90,
+        "category": "burguer"
+    },
+    "2": {
+        "name": "Mega Burguer Power",
+        "price": 16.90,
+        "category": "burguer"
+    },
+    "3": {
+        "name": "OPA Burguer Classic",
+        "price": 46.90,
+        "category": "burguer"
+    },
+    "4": {
+        "name": "OPA Dog Completo",
+        "price": 26.90,
+        "category": "dog"
+    },
+    "5": {
+        "name": "Super Dogão",
+        "price": 12.90,
+        "category": "dog"
+    },
+    "6": {
+        "name": "Combo Fun",
+        "price": 66.90,
+        "category": "combo"
+    },
+    "7": {
+        "name": "Coca-cola 500 ml",
+        "price": 6.90,
+        "category": "drink"
+    },
+    "8": {
+        "name": "Guaraná Antártica 1L",
+        "price": 6.90,
+        "category": "drink"
+    }
+}
