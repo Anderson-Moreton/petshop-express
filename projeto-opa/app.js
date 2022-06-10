@@ -7,6 +7,7 @@ const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const menuRouter = require('./routes/menu')
+const adminRouter = require('./routes/admin')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(session({ secret: "segredo" }))
 
 app.use('/', indexRouter);
 app.use('/menu', menuRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
