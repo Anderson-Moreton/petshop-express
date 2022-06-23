@@ -48,11 +48,20 @@ const productsController = {
     },
     addProduct: (req, res) => {
         const productData = req.body;
-        db.Product.create(productData).then((result) => {
-            res.send("Success: " + result);
+        const parsedProductData = {
+            ...productData,
+            category: parseInt(productData.category),
+            price: parseFloat(productData.price.replace(',', '.'))
+        }
+
+        db.Product.create(parsedProductData).then((result) => {
+            res.render('admin/addProduct');
         }).catch((result) => {
             res.send("An error ocurred when trying to add a new product: " + result);
         })
+    },
+    addProductView: (req, res) => {
+        res.render('admin/addProduct')
     },
     deleteProduct: (req, res) => {
         const productId = req.params.id;
