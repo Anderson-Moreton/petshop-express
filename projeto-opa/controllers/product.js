@@ -3,6 +3,7 @@ const path = require('path');
 const productCategory = require('../data/productsCategories');
 const productsDatabasePath = path.join(__dirname, '../data/productsDatabase.json');
 const products = JSON.parse(fs.readFileSync(productsDatabasePath, 'utf-8'));
+const db = require('../models')
 
 const productDataParser = (newProductId, productData) => {
     return ({
@@ -13,9 +14,11 @@ const productDataParser = (newProductId, productData) => {
         }
     })
 }
+
 const productsController = {
-    getAllProducts: (req, res) => {
-        const context = { products }
+    getAllProducts: async (req, res) => {
+        const allProducts = await db.Product.findAll()
+        const context = { allProducts }
         res.send(context);
     },
     getProductById: (req, res) => {
@@ -45,15 +48,11 @@ const productsController = {
     },
     addProduct: (req, res) => {
         const productData = req.body;
-        try {
-            const newProductId = Number(Object.keys(products).sort((a, b) => b - a)[0]) + 1;
-            const parsedProductData = productDataParser(newProductId, productData);
-            Object.assign(products, parsedProductData);
-            fs.writeFileSync(productsDatabasePath, JSON.stringify(products))
-            res.send(parsedProductData)
-        } catch (error) {
-            res.send("An error ocurred when trying to add a new product: " + error);
-        }
+        db.Product.create(productData).then((result) => {
+            res.send("Success: " + result);
+        }).catch((result) => {
+            res.send("An error ocurred when trying to add a new product: " + result);
+        })
     },
     deleteProduct: (req, res) => {
         const productId = req.params.id;
