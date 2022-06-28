@@ -1,8 +1,5 @@
 const fs = require('fs');
-const path = require('path');
-const productCategory = require('../data/productsCategories');
-const productsDatabasePath = path.join(__dirname, '../data/productsDatabase.json');
-const products = JSON.parse(fs.readFileSync(productsDatabasePath, 'utf-8'));
+const { Op } = require("sequelize");
 const db = require('../models')
 
 const productDataParser = (newProductId, productData) => {
@@ -21,30 +18,72 @@ const productsController = {
         const context = { allProducts }
         res.send(context);
     },
-    getProductById: (req, res) => {
+    getProductById: async (req, res) => {
         const productId = req.params.id;
-        const context = products[productId] || `any product with id ${productId} found`;
-        res.send(context);
+        db.Product.findByPk(productId).then((result) => {
+            if (result) {
+                res.send(result);
+            } else {
+                res.send(`any product with id ${productId} found`)
+            }
+        }).catch((error) => {
+            res.send(`any product with id ${productId} found`)
+        })
     },
     getProductByName: (req, res) => {
         const productName = req.params.name.toLowerCase();
-        const context = Object.values(products).filter(product => product.name?.toLowerCase().includes(productName));
-        res.send(context);
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: productName
+                }
+            }
+        }).then((result) => {
+            if (result) {
+                res.send(result);
+            } else {
+                res.send(`any product with name ${productName} found`)
+            }
+        }).catch((error) => {
+            res.send(`any product with name ${productName} found`)
+        })
     },
     getProductsByPriceRange: (req, res) => {
         const maxPrice = req.params.maxPrice;
         const minPrice = req.params.minPrice;
-        const context = Object.values(products).filter(product => product.price < maxPrice && product.price > minPrice);
-        res.send(context);
+        db.Product.findAll({
+            where: {
+                price: {
+                    [Op.between]: [minPrice, maxPrice]
+                }
+            }
+        }).then((result) => {
+            if (result) {
+                res.send(result);
+            } else {
+                res.send(`any product with price between ${minPrice} and ${maxPrice} found`)
+            }
+        }).catch((error) => {
+            res.send(`any product with price between ${minPrice} and ${maxPrice} found`)
+        })
     },
     getProductsByCategory: (req, res) => {
         const category = req.params.category;
-        if (productCategory[category]) {
-            const context = Object.values(products).filter(product => product.category === category);
-            res.send(context);
-        } else {
+        db.Product.findAll({
+            where: {
+                category: {
+                    [Op.eq]: category
+                }
+            }
+        }).then((result) => {
+            if (result) {
+                res.send(result);
+            } else {
+                res.send('please fix the product category name and try again.')
+            }
+        }).catch((error) => {
             res.send('please fix the product category name and try again.')
-        }
+        })
     },
     addProduct: (req, res) => {
         const productData = req.body;
@@ -54,24 +93,35 @@ const productsController = {
             price: parseFloat(productData.price.replace(',', '.'))
         }
 
-        db.Product.create(parsedProductData).then((result) => {
+        db.Product.create(parsedProductData).then(() => {
             res.render('admin/addProduct');
-        }).catch((result) => {
-            res.send("An error ocurred when trying to add a new product: " + result);
+        }).catch((error) => {
+            res.send("An error ocurred when trying to add a new product: " + error);
         })
     },
     addProductView: (req, res) => {
         res.render('admin/addProduct')
     },
     deleteProduct: (req, res) => {
-        const productId = req.params.id;
-        try {
-            delete products[productId];
-            fs.writeFileSync(productsDatabasePath, JSON.stringify(products))
-            res.send("product deleted with success.")
-        } catch (error) {
+        const productId = req.body.productId;
+        db.Product.destroy({
+            where: {
+                id: {
+                    [Op.eq]: productId
+                }
+            }
+        }).then((result) => {
+            if (result) {
+                res.render('admin/deleteProduct');
+            } else {
+                res.send('An error ocurred when trying to delete a product')
+            }
+        }).catch((error) => {
             res.send("An error ocurred when trying to delete a product: " + error);
-        }
+        })
+    },
+    deleteProductView: (req, res) => {
+        res.render('admin/deleteProduct')
     },
 
 }
