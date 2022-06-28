@@ -4,8 +4,6 @@ const { Op } = require("sequelize");
 const productCategory = require('../data/productsCategories');
 const productsDatabasePath = path.join(__dirname, '../data/productsDatabase.json');
 const db = require('../models')
-const productCategory = require('../data/productsCategories');
-const productsDatabasePath = path.join(__dirname, '../data/productsDatabase.json');
 
 const productDataParser = (newProductId, productData) => {
     return ({
