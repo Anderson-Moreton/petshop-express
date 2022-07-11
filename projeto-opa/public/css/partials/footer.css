@@ -59,3 +59,7 @@ footer .row {
     flex-direction: row;
     height: 100%;
 }
+
+.alert{
+    color: rgb(248, 88, 88);
+}

@@ -1,3 +1,5 @@
+const {validationResult}= require('express-validator')
+
 const userController = {
     loginPage: (req, res) => {
         const context = {}
@@ -7,7 +9,7 @@ const userController = {
         const context = {}
         res.render('register', context);
     },
-    login: (req, res) => {
+    login: (req,res) => {
         const { email, password } = req.body;
         req.session.loggedUser = true;
         req.session.email = email;
@@ -15,13 +17,24 @@ const userController = {
 
         res.redirect('/');
     },
-    register: (req, res) => {
+    register: (req, res,next) => {
+        
+        const errors = validationResult(req)
+        console.log(errors)
+        if(!errors.isEmpty()) {
+            console.log(errors.mapped())
+            return res.render('register',{errors:errors.mapped(),old:req.body})
+        }else{
+       
+        
+        
         const { email, password } = req.body;
         req.session.loggedUser = true;
         req.session.email = email;
         req.session.password = password;
 
         res.redirect('/');
+    }
     },
     logout: (req, res) => {
         req.session.loggedUser = false;
