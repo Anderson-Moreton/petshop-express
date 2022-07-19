@@ -6,8 +6,8 @@ const contactController = {
     },
     sent:(req,res,next)=>{
 
-        const errors = validationResult(req)
-        console.log(errors)
+ const errors = validationResult(req)
+       
 if(!errors.isEmpty()){
     return res.render('contact',{errors:errors.mapped(),old:req.body})
 }else{
