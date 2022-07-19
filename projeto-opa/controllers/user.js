@@ -29,9 +29,7 @@ const userController = {
         req.session.loggedUser = true;
         req.session.email = email;
         req.session.password = password;
-         console.log("tudo funcionando",db)
-
-        const registrationform =await db.registrationForm.create({
+         const registrationform =await db.registrationForm.create({
             name,
             email,
             password,
@@ -45,7 +43,7 @@ const userController = {
             state 
 
         });
-        console.log(registrationform)
+        
          return registrationform,res.redirect('/');
   
 
