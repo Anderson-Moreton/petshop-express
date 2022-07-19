@@ -20,11 +20,23 @@ const validations = [
     body('city').notEmpty().withMessage(" nao pode ser vazio!"),
     body('state').notEmpty().withMessage("Nome nao pode ser vazio!")
 ]
+const validationsContact =[
+    body('name').notEmpty(),
+    body('email').notEmpty(),
+    body('cellphone').notEmpty(),
+    body('address').notEmpty()
+]
+
+
+
+
 /*Home*/
 router.get('/', generalController.home);
 
 /*Contact*/
 router.get('/contato', contactController.contato);
+
+router.post('/contato/sent',validationsContact,contactController.sent);
 
 /*About Us*/
 router.get('/quemsomos', aboutUsController.quemsomos);
