@@ -27,27 +27,45 @@
 
         <section>
             <div class="container">
-                <form method="post">
+                <form method="post" action="/contato/sent" >
                     <div class="form-section">
 
                         <label for="">Nome Completo</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="name" id="" value="<%= locals.old && old.name %>">
+                        <% if(locals.errors && errors.name){%>
+                                    
 
+                            <b class="alert"><%= errors.name.name %>*Este campo é obrigatorio</b>
+                            <% } %>
                         <label for="">E-mail</label>
-                        <input type="email" name="" id="">
+                        <input type="email" name="email" id="" value="<%= locals.old && old.email %>">
+                        <% if(locals.errors && errors.email){%>
+                                    
 
+                            <b class="alert"><%= errors.email.email %>*Este campo é obrigatorio</b>
+                            <% } %>
                         <div class="row-box">
                             <div class="column-box">
                                 <label for="">Telefone</label>
-                                <input type="tel" name="" id="">
+                                <input type="text" name="cellphone" id="" value="<%= locals.old && old.cellphone %>">
+                                <% if(locals.errors && errors.cellphone){%>
+                                    
+
+                                    <b class="alert"><%= errors.cellphone.cellphone %>*Este campo é obrigatorio</b>
+                                    <% } %>
                             </div>
                             <div class="column-box">
                                 <label for="">Cidade</label>
-                                <input type="text" name="" id="">
+                                <input type="text" name="address" id="" value="<%= locals.old && old.address %>">
+                                <% if(locals.errors && errors.address){%>
+                                    
+
+                                    <b class="alert"><%= errors.address.address %>*Este campo é obrigatorio</b>
+                                    <% } %>
                             </div>
                             <div class="column-box">
                                 <label for="">Estado</label>
-                                <select name="estado" id="estado">
+                                <select name="" id="estado" >
                                     <option disabled selected>Selecione seu estado</option>
                                     <option value="ac">Acre</option>
                                     <option value="al">Alagoas</option>
@@ -76,6 +94,7 @@
                                     <option value="sp">São Paulo</option>
                                     <option value="se">Sergipe</option>
                                     <option value="to">Tocantins</option>
+                                   
                                 </select>
                             </div>
                         </div>
