@@ -1,8 +1,8 @@
-const productsController = require("./product");
+const db = require('../models')
 
 const generalController = {
-    
-    home: (req, res) => {
+
+    home: async (req, res) => {
         // const produtos = [
         //     {
         //       id: 10,
@@ -29,10 +29,9 @@ const generalController = {
         //         foto: '/img/burguer04.jpg'
         //       },
         //   ];
-        const produtos = productsController.getAllProducts()
-          
-        
-        res.render('index',{produtos});
+
+        const produtos = await db.Product.findAll()
+        res.render('index', { produtos });
     }
 }
 
