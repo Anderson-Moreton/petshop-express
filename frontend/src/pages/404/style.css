@@ -1,0 +1,47 @@
+.layout-screen-404 {
+  @apply
+  h-screen
+  flex flex-col md:flex-row md:px-36
+  overflow-y-auto
+  justify-center
+  items-center
+  align-middle
+
+}
+
+.title-404 {
+  @apply
+  font-extrabold
+  text-9xl sm:text-180
+  text-opaGreen
+  m-3 p-3
+  text-right
+}
+
+.title-404-2 {
+  @apply
+  font-semibold
+  text-3xl
+}
+
+.text-404 {
+  @apply
+  font-light
+  text-base
+  w-full
+  mt-2
+  text-darkGray
+}
+
+.column-section-404 {
+  @apply
+  flex flex-col
+  justify-start
+  align-middle
+  items-start
+  text-left
+  mx-20
+  border-l-2
+  border-opaGreen
+  pl-10
+}
