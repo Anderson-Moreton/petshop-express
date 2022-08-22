@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './style.css';
-import { IUserInfo, USER_INFO } from '@src/cache';
-import { HomeIcon, ChatAltIcon, MenuIcon, PencilIcon, CollectionIcon, UserGroupIcon } from '@heroicons/react/outline';
-import Sidebar from '@components/Sidebar';
-import { useHistory } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import MobileSidebar from '@components/MobileSidebar';
+import { IUserInfo } from '@src/cache';
+import { HomeIcon, ChatAltIcon, PencilIcon, CollectionIcon, UserGroupIcon } from '@heroicons/react/outline';
+import logoOpa from '@assets/logo-opa.svg'
+import logoOpaBlackAndWhite from '@assets/logoOpa.png'
 
 interface IBase {
-  children: React.ReactChild | false;
-  header: any;
-  noMargin?: boolean;
-  options?: any;
-  activeRoute?: string;
+  children: any;
+  imageBanner?: string;
 }
 
 const navigationList = [
@@ -53,40 +48,98 @@ const navigationList = [
   },
 ];
 
-const Base = ({ activeRoute, children, options, header, noMargin=false }: IBase) => {
-  const [sideBarNavigation, setSideBarNavigation] = useState<any[]>([]);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const history = useHistory();
-  const {
-    data: { userInfo },
-  } = useQuery(USER_INFO);
-
-  useEffect(() => {
-    const currentRoute = activeRoute || history.location.pathname;
-    const localNavigation = navigationList.filter((nav) => nav.can(userInfo)).map((nav) => ({
-        ...nav,
-        current: currentRoute === nav.href,
-      }));
-    setSideBarNavigation(localNavigation);
-  }, [userInfo]);
-
+const Base = ({ imageBanner, children }: IBase) => {
   return(
   <div className="layout-screen">
-      <MobileSidebar navigation={sideBarNavigation} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <Sidebar navigation={sideBarNavigation} />
-      <div className="mobile-button-sidebar">
-          <button
-            type="submit"
-            className="mobile-button"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <MenuIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
+    <div className="menu">
+      <div className="logo">
+          <img src={logoOpa} className="logoImage" alt="Logo Opa com fundo branco" />
+      </div>
+      <div className="menuCabecalho">
+            <div className="itemMenu">
+                <a href="/">Home</a>
+            </div>
+            <div className="itemMenu">
+                <a href="/menu">Cardápio</a>
+            </div>
+            <div className="itemMenu">
+                <a href="/contato">Contato</a>
+            </div>
+            <div className="itemMenu">
+                <a href="/quemsomos">Quem somos</a>
+            </div>
+            <div className="itemMenu">
+                <a href="/entrar">Entrar</a>
+            </div>
+            <div className="itemMenu">
+                <a href="/carrinho">Meu carrinho</a>
+            </div>
+      </div>
+    </div>
+    <section className="banner">
+        <img className="style-image" src={imageBanner} alt="" />
+        <p className="style-title" >Home</p>
+    </section>
+    <div>
+      {children}
+    </div>
+    <div className="footer">
+        <div className="logo">
+            <img src={logoOpaBlackAndWhite} alt="Logo Opa Dog e Burguer" className="h-2/3" />
         </div>
-    <div className="content">
-      <div className="header">{header}</div>
-      {options && <div className="options">{options}</div>}
-      <div className={noMargin ? "main" : "md:px-6 main"}>{children}</div>
+        <div className="menu-mapa">
+            <div className="mapaSite">
+                <h3 className="no-bold">Mapa do site</h3>
+
+                <nav>
+                    <ul className="list-menu-footer">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/menu">Cardápio</a>
+                        </li>
+                        <li>
+                            <a href="/quemsomos">Quem somos</a>
+                        </li>
+                        <li>
+                            <a href="/contato">Contato</a>
+                        </li>
+                        <li>
+                            <a href="/entrar">Entrar</a>
+                        </li>
+                        <li>
+                            <a href="/carrinho">Meu carrinho</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div className="funcionamento">
+                <h3 className="no-bold">Horário de Funcionamento</h3>
+                <p>Segunda à Quinta  18:00 às 00:00</p>
+                <p>Sexta à Domingo  18:00 às 02:00</p>
+            </div>
+            <div className="redesSociais">
+                <h3 className="no-bold">Redes Sociais</h3>
+
+                <nav>
+                    <ul className="list-menu-footer">
+                        <li>
+                            <a href="https://www.facebook.com/opadogburguer" target="_blank" rel="noreferrer"><img
+                                    src="/img/logoFace.svg" alt="Logo Facebook" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/opa_dogburguer/" target="_blank" rel="noreferrer"><img
+                                    src="/img/logoInsta.svg" alt="Logo Instagram" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCN2ub6gO3V2c6D0H-CniqMg/featured"
+                                target="_blank" rel="noreferrer"><img src="/img/logoYoutube.svg" alt="Logo Youtube" /></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
   </div>
 )};

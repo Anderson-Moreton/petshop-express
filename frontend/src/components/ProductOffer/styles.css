@@ -1,0 +1,15 @@
+.product-offer-image {
+  @apply
+  w-full rounded-t-md
+}
+.product-offer-container {
+  @apply w-72 bg-yellow-100 text-gray-800 rounded-xl border-2 border-black
+}
+.product-offer-details {
+  @apply
+  flex justify-between m-4
+}
+.product-offer-button {
+  @apply
+  flex items-center justify-around
+}

@@ -8,7 +8,7 @@ module.exports = {
     "username": "root",
     "password": null,
     "database": "db_dev_opa",
-    "host": "127.0.0.1",
+    "host": "127.0.0.1:3001",
     "dialect": "mysql"
   },
   "test": {

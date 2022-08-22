@@ -1,0 +1,110 @@
+* {
+  @apply m-0
+}
+
+.body {
+  @apply mx-20
+}
+.sale .container {
+  @apply
+  flex
+}
+
+.container {
+  @apply text-center w-full
+}
+section {
+  @apply
+  flex justify-center
+}
+
+form {
+  @apply
+  flex flex-col gap-4 justify-around mb-8
+}
+form input {
+  @apply
+  bg-yellow-300 border
+  px-2;
+}
+select {
+  @apply
+  bg-yellow-300 border
+}
+textarea {
+  @apply
+  bg-yellow-300 border
+}
+form label {
+  @apply
+  font-normal pl-4
+}
+form span {
+  @apply
+  font-semibold
+}
+h2 {
+  @apply
+  m-6 text-3xl
+}
+p {
+  @apply
+  text-3xl font-thin w-full text-center
+}
+
+.row {
+  @apply
+  flex w-full h-20
+}
+button {
+  @apply
+  bg-yellow-500 h-fit border border-transparent mb-4 duration-100 rounded-xl p-2 px-6 align-middle
+}
+button:hover {
+  @apply
+  bg-yellow-600
+}
+button.button-inverse:hover {
+  @apply
+  bg-gray-700
+}
+
+.button-inverse {
+  @apply
+  bg-gray-800 text-yellow-500
+}
+.botao a {
+  @apply
+  text-gray-800 no-underline
+}
+
+.button-primary {
+  @apply
+  bg-yellow-300
+}
+
+.no-bold {
+  @apply
+  font-normal
+}
+.box-flex {
+  @apply
+  flex flex-col justify-around
+}
+
+a {
+  @apply
+  no-underline
+}
+.row-box {
+  @apply
+  flex flex-row items-center gap-4
+}
+.column-box {
+  @apply
+  flex flex-col w-full
+}
+.form-section {
+  @apply
+  flex flex-col justify-center
+}

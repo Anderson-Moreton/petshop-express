@@ -1,4 +1,5 @@
 import React from "react";
+import './styles.css';
 
 interface IProductOffer {
   productName: string;
@@ -23,7 +24,7 @@ export const ProductOffer = ({productName, productPrice, productImage}: IProduct
             </div>
             <div className="product-offer-button">
                 <button className="button-secondary" type="button">Ver detalhes</button>
-                <button type="submit">Adicionar</button>
+                <button className="button-primary" type="submit">Adicionar</button>
             </div>
         </div>
     </article>
