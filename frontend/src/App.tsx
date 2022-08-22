@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, RouteProps } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getToken } from '@services/auth';
 
 import './index.css';
 import Error404Page from '@pages/404';
+import { Home } from '@pages/Home';
 
 export const LOGIN_PATH = '/login';
 export const PASSWORD_RESET_PATH = '/usuario/redefinicao-de-senha/';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/" component={Home} />
         <Route path="*" component={Error404Page} />
       </Switch>
     </Router>
