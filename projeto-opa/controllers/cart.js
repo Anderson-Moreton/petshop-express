@@ -1,34 +1,22 @@
 const cartController = {
-    carrinho: (req, res) => {
-        const carrinho = [
-            {
-                id: 44,
-                nome: 'X-tudo',
-                valor: 16.99,
-                foto: '/img/burguer01.jpg'
-              },
-              {
-                id: 12,
-                nome: 'x-especial',
-                valor: 20,
-                foto: '/img/burguer02.jpg'
-              },
-              {
-                id: 17,
-                nome: 'x-gulosso',
-                valor: 235.99,
-                foto: '/img/burguer03.jpg'
-              },
-              {
-                  id: 13,
-                  nome: 'x-max',
-                  valor: 235.99,
-                  foto: '/img/burguer04.jpg'
-                },
-         ];
-        
-        res.render('cart',{carrinho});
+  carrinho: (req, res) => {
+    res.render('cart', { session: req.session });
+  },
+  comprar: (req, res) => {
+    if (req.session.loggedUser == true) {
+      userEmail = req.session.email;
+      orderTotal = carrinho.reduce((a, b) => Number(a.valor) + Number(b.valor));
+      carrinho = req.body.carrinho;
+
+      // ADD THESES DATA TO THE DATABASE
+
+      res.send({ ...userEmail })
+    } else {
+      res.send({
+        result: "bad",
+      })
     }
+  }
 }
 
 module.exports = cartController;

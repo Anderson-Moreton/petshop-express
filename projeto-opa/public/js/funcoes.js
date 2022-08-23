@@ -50,36 +50,24 @@ function exibirCarrinho() {
   carrinhoTela.innerHTML = '';
   carrinho.map((produto) => {
     carrinhoTela.innerHTML += `  
-                                <div class='produto'>
-                                `;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      <img src='${produto.foto}' width='50px' />
-                                </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Nome: ${produto.nome}
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Valor: R$ ${produto.valor}
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Quantidade: ${produto.quantidade}
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      Subtotal: R$ ${
-                                        produto.quantidade * produto.valor
-                                      }
-                                  </p>`;
-    carrinhoTela.innerHTML += `  
-                                  <p>
-                                      <button onClick="remover({id:${produto.id}, nome:'${produto.nome}'})">Remover </button>
-                                  </p>`;
+    <div class="product-offer-container">
+    <div>
+        <img class="product-offer-image" src="${produto.foto}" alt="">
+    </div>
+    <div class="product-offer-details">
+        <h3>
+           ${produto.nome}
+        </h3>
+        <h3>
+        ${produto.quantidade}
 
-    carrinhoTela.innerHTML += `</div>`;
+        </h3>
+    </div>
+    <div class="product-offer-button">
+        <button
+            onclick="remover({quantidade:1, nome:'<%=${produto.nome}%>', valor:'<%=${produto.valor}%>', foto:'/img/burguer04.jpg'})">Remover</button>
+    </div>
+</div> `;
   });
 
   if (!carrinho.length) {

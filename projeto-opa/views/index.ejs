@@ -17,59 +17,31 @@
         <%-include ('./partials/header') %>
     </header>
     <main>
-        <br><br><br><br><br><br>
-        <hr />
-          
         <%- include('partials/carrinho') %>
-        <section class="banner">
-            <img class="style-image" src="/img/foto home.jpg" alt="">
-            <p class="style-title">Home</p>
-        </section>
-        <section>
-            <div class="container">
-                <div class="tituloPrincipal">
-                    <h2>Mais Vendidos</h2>
-                </div>
-            </div>
-        </section>
-        <section class="sale">
-            <div class="row-box">
-                <% produtos.forEach(function(produto){ %>
-                    <%- include ('./partials/productOffer', { productImage: "/img/venda1.svg" , productName: produto.name, price: produto.price }) %>
-                <% }) %>
-                </div>
+            <section class="banner">
+                <img class="style-image" src="/img/foto home.jpg" alt="">
+                <p class="style-title">Home</p>
             </section>
             <section>
                 <div class="container">
-                <div class="tituloPrincipal">
-                    <h2>Novidades</h2>
+                    <div class="tituloPrincipal">
+                        <h2>Mais Vendidos</h2>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section class="sale">
+                <div class="row-box">
+                    <% produtos.forEach(function(product){ %>
+                        <%- include ('./partials/productOffer', { productId: product.id, productImage: "/img/venda1.svg"
+                            , productName: product.name, productPrice: product.price }) %>
+                            <% }) %>
+                </div>
+            </section>
+            </section>
     </main>
     <footer>
         <%-include ('./partials/footer') %>
     </footer>
-
 </body>
-  <script>
-    //     var addCartItem = document.getElementById("addCartItem");
-    // addCartItem.onclick = function (itemId) {
-    //     const novoItem ={ 
-    //         quantidade :
-    //     }
-    //     var cartItems = localStorage.getItem("cartItems") || []
 
-    //     if(cartItems.find((p)=>p?.id == itemId)){
-            
-    //     }
-    //     var newCartItemsList = [
-    //         ...cartItems,
-    //         itemId
-    //     ]
-
-    //     localStorage.setItem("cartItems", newCartItemsList)
-    // }
- 
-  </script>
 </html>
