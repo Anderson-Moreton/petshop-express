@@ -194,3 +194,9 @@ a {
 .button-secondary {
     background-color: #FEF29A;
 }
+
+.produto img{
+    width: 250px;
+    height: 250px;
+
+}

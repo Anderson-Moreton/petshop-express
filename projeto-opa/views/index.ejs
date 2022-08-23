@@ -17,6 +17,10 @@
         <%-include ('./partials/header') %>
     </header>
     <main>
+        <br><br><br><br><br><br>
+        <hr />
+          
+        <%- include('partials/carrinho') %>
         <section class="banner">
             <img class="style-image" src="/img/foto home.jpg" alt="">
             <p class="style-title">Home</p>
@@ -30,35 +34,42 @@
         </section>
         <section class="sale">
             <div class="row-box">
-                <%- include ('./partials/productOffer', { productImage: "/img/venda1.svg" ,
-                    productName: "Hamburguer Duplo" , price: "12,90" }) %>
-                    <%- include ('./partials/productOffer', { productImage: "/img/venda2.svg" ,
-                        productName: "Hamburguer Duplo" , price: "21,40" }) %>
-                        <%- include ('./partials/productOffer', { productImage: "/img/venda3.svg" ,
-                            productName: "Hamburguer Duplo" , price: "12" }) %>
-            </div>
-        </section>
-        <section>
-            <div class="container">
+                <% produtos.forEach(function(produto){ %>
+                    <%- include ('./partials/productOffer', { productImage: "/img/venda1.svg" , productName: produto.name, price: produto.price }) %>
+                <% }) %>
+                </div>
+            </section>
+            <section>
+                <div class="container">
                 <div class="tituloPrincipal">
                     <h2>Novidades</h2>
                 </div>
-            </div>
-        </section>
-        <section class="sale">
-            <div class="row-box">
-                <%- include ('./partials/productOffer', { productImage: "/img/novid1.svg" ,
-                    productName: "Hamburguer Duplo" , price: "31,80" }) %>
-                    <%- include ('./partials/productOffer', { productImage: "/img/novid2.svg" ,
-                        productName: "Hamburguer Duplo" , price: "20,49" }) %>
-                        <%- include ('./partials/productOffer', { productImage: "/img/novid3.svg" ,
-                            productName: "Hamburguer Duplo" , price: "12" }) %>
             </div>
         </section>
     </main>
     <footer>
         <%-include ('./partials/footer') %>
     </footer>
-</body>
 
+</body>
+  <script>
+    //     var addCartItem = document.getElementById("addCartItem");
+    // addCartItem.onclick = function (itemId) {
+    //     const novoItem ={ 
+    //         quantidade :
+    //     }
+    //     var cartItems = localStorage.getItem("cartItems") || []
+
+    //     if(cartItems.find((p)=>p?.id == itemId)){
+            
+    //     }
+    //     var newCartItemsList = [
+    //         ...cartItems,
+    //         itemId
+    //     ]
+
+    //     localStorage.setItem("cartItems", newCartItemsList)
+    // }
+ 
+  </script>
 </html>

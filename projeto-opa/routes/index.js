@@ -49,6 +49,6 @@ router.post('/user/register',validations,userController.register);
 router.get('/user/logout', userController.logout);
 
 /*Cart*/
-router.get('/carrinho', loggedUser, cartController.carrinho);
+router.get('/carrinho',cartController.carrinho);
 
 module.exports = router;
