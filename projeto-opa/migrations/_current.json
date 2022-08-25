@@ -66,12 +66,6 @@
                     "primaryKey": true,
                     "autoIncrement": true,
                     "field": "id",
-                    "references": {
-                        "model": "Orders",
-                        "key": "id"
-                    },
-                    "onDelete": "NO ACTION",
-                    "onUpdate": "CASCADE",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "orderId": {
@@ -80,9 +74,6 @@
                         "key": "id"
                     },
                     "field": "orderId",
-                    "allowNull": true,
-                    "onDelete": "CASCADE",
-                    "onUpdate": "CASCADE",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "productId": {
@@ -91,9 +82,6 @@
                         "key": "id"
                     },
                     "field": "productId",
-                    "allowNull": true,
-                    "onDelete": "CASCADE",
-                    "onUpdate": "CASCADE",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "quantity": {
@@ -121,29 +109,27 @@
                     "primaryKey": true,
                     "autoIncrement": true,
                     "field": "id",
-                    "references": {
-                        "model": "Categories",
-                        "key": "id"
-                    },
-                    "onDelete": "NO ACTION",
-                    "onUpdate": "CASCADE",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "name": {
                     "field": "name",
                     "seqType": "Sequelize.STRING"
                 },
-                "category": {
+                "categoryId": {
                     "references": {
                         "model": "Categories",
                         "key": "id"
                     },
-                    "field": "category",
+                    "field": "categoryId",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "price": {
                     "field": "price",
                     "seqType": "Sequelize.FLOAT"
+                },
+                "illustration": {
+                    "field": "illustration",
+                    "seqType": "Sequelize.STRING"
                 },
                 "createdAt": {
                     "allowNull": false,
@@ -154,17 +140,6 @@
                     "allowNull": false,
                     "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
-                },
-                "categoryId": {
-                    "allowNull": true,
-                    "references": {
-                        "model": "Categories",
-                        "key": "id"
-                    },
-                    "onDelete": "SET NULL",
-                    "onUpdate": "CASCADE",
-                    "field": "categoryId",
-                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []

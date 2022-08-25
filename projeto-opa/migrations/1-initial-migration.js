@@ -8,15 +8,15 @@ var Sequelize = require('sequelize');
  * createTable "Categories", deps: []
  * createTable "Orders", deps: []
  * createTable "Users", deps: []
- * createTable "Products", deps: [Categories, Categories, Categories]
- * createTable "OrderItems", deps: [Orders, Orders, Products]
+ * createTable "Products", deps: [Categories]
+ * createTable "OrderItems", deps: [Orders, Products]
  *
  **/
 
 var info = {
     "revision": 1,
     "name": "initial-migration",
-    "created": "2022-08-25T15:35:28.061Z",
+    "created": "2022-08-25T16:30:07.564Z",
     "comment": ""
 };
 
@@ -161,12 +161,6 @@ var migrationCommands = [{
             {
                 "id": {
                     "type": Sequelize.INTEGER,
-                    "onUpdate": "CASCADE",
-                    "onDelete": "NO ACTION",
-                    "references": {
-                        "model": "Categories",
-                        "key": "id"
-                    },
                     "field": "id",
                     "autoIncrement": true,
                     "primaryKey": true,
@@ -176,9 +170,9 @@ var migrationCommands = [{
                     "type": Sequelize.STRING,
                     "field": "name"
                 },
-                "category": {
+                "categoryId": {
                     "type": Sequelize.INTEGER,
-                    "field": "category",
+                    "field": "categoryId",
                     "references": {
                         "model": "Categories",
                         "key": "id"
@@ -187,6 +181,10 @@ var migrationCommands = [{
                 "price": {
                     "type": Sequelize.FLOAT,
                     "field": "price"
+                },
+                "illustration": {
+                    "type": Sequelize.STRING,
+                    "field": "illustration"
                 },
                 "createdAt": {
                     "type": Sequelize.DATE,
@@ -197,17 +195,6 @@ var migrationCommands = [{
                     "type": Sequelize.DATE,
                     "field": "updatedAt",
                     "allowNull": false
-                },
-                "categoryId": {
-                    "type": Sequelize.INTEGER,
-                    "field": "categoryId",
-                    "onUpdate": "CASCADE",
-                    "onDelete": "SET NULL",
-                    "references": {
-                        "model": "Categories",
-                        "key": "id"
-                    },
-                    "allowNull": true
                 }
             },
             {}
@@ -220,12 +207,6 @@ var migrationCommands = [{
             {
                 "id": {
                     "type": Sequelize.INTEGER,
-                    "onUpdate": "CASCADE",
-                    "onDelete": "NO ACTION",
-                    "references": {
-                        "model": "Orders",
-                        "key": "id"
-                    },
                     "field": "id",
                     "autoIncrement": true,
                     "primaryKey": true,
@@ -233,9 +214,6 @@ var migrationCommands = [{
                 },
                 "orderId": {
                     "type": Sequelize.INTEGER,
-                    "onUpdate": "CASCADE",
-                    "onDelete": "CASCADE",
-                    "allowNull": true,
                     "field": "orderId",
                     "references": {
                         "model": "Orders",
@@ -244,9 +222,6 @@ var migrationCommands = [{
                 },
                 "productId": {
                     "type": Sequelize.INTEGER,
-                    "onUpdate": "CASCADE",
-                    "onDelete": "CASCADE",
-                    "allowNull": true,
                     "field": "productId",
                     "references": {
                         "model": "Products",

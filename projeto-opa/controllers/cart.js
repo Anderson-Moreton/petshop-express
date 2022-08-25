@@ -1,33 +1,42 @@
+const db = require('../models')
+
+
 const cartController = {
   carrinho: (req, res) => {
     res.render('cart', { session: req.session });
   },
-  comprar: (req, res) => {
-    if (req.body.loggedUser == true) {
+  comprar: async (req, res) => {
+    if (req.session.loggedUser == true) {
       const carrinho = req.body.carrinho;
-      const totalCompra = carrinho.reduce((a, b) => a.valor + b.valor);
       const userEmail = req.session.email;
 
-      // TABELA DE ORDENS DE COMPRA
-      // INSERIR ESSA COMPRA COM O TOTAL, EMAIL E HORÁRIO --> ID DA COMPRA
+      let totalCompra = 0;
+      carrinho?.forEach(item => {
+        totalCompra += (item.valor * item.quantidade)
+      })
 
-      // TABELA DE ITENS DA COMPRA
-      // PARA CADA ITEM DO CARRINHO, INSERIR NO BANCO DE DADOS, O ID DA COMPRA, O ID DO PRODUTO E A QUANTIDADE
+      const orderEntry = {
+        cliente: userEmail,
+        total: totalCompra
+      }
+      db.Order.create(orderEntry).then(order => {
+        carrinho?.forEach(item => {
+          const orderItemsEntry = {
+            orderId: order.id,
+            productId: item.id,
+            quantity: item.quantidade
+          }
 
-      // RETORNAR NA REQUISIÇÃO O ID E O VALOR DA COMPRA
-      res.send(JSON.stringify(totalCompra));
+          db.OrderItems.create(orderItemsEntry)
+        })
+
+        res.send(JSON.stringify({ "orderId": order.id }));
+      }).catch((error) => {
+        res.send("An error has ocurred when trying to finish order: " + error);
+      })
     } else {
       res.send("User not logged");
     }
-
-    //   // ADD THESES DATA TO THE DATABASE
-
-    //   res.send({ ...userEmail })
-    // } else {
-    //   res.send({
-    //     result: "bad",
-    //   })
-    // }
   }
 }
 
