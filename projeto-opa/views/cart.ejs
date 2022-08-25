@@ -22,26 +22,12 @@
             <p class="style-title">Meu Carrinho</p>
         </section>
         <section class="container">
-            <div id="carrinho">
-
+            <div id="carrinho" class="row-box">
             </div>
             <%- include('partials/carrinho') %>
                 <script src='/js/exibirCarrinho.js'></script>
-
-                <div id="successModal" class="modal">
-                    <div class="modal-content">
-                        <img class="modal-icon" src="/img/success-icon.svg" />
-                        <div class="modal-text">A compra foi realizada com sucesso!</div>
-                    </div>
-                </div>
-                <div id="failModal" class="modal">
-                    <div class="modal-content">
-                        <img class="modal-icon" src="img/error-icon.svg" />
-                        <div class="modal-text">É necessário entrar antes de efetuar a compra.</div>
-                    </div>
-                </div>
-                <button id="buyButton">Comprar</button>
         </section>
+        <button id="buyButton">Comprar</button>
     </main>
     <footer>
         <%-include ('./partials/footer') %>
@@ -61,14 +47,9 @@
                 products: carrinho
             })
         }).then(response => {
-            if (response.body.result) {
-                successModal.style.display = "block";
-            } else {
-                failModal.style.display = "block";
-            }
+            console.log(response.body.result)
         }).catch(error => {
             console.log(error)
-            failModal.style.display = "block";
         })
     }
 </script>

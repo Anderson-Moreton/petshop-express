@@ -3,19 +3,31 @@ const cartController = {
     res.render('cart', { session: req.session });
   },
   comprar: (req, res) => {
-    if (req.session.loggedUser == true) {
-      userEmail = req.session.email;
-      orderTotal = carrinho.reduce((a, b) => Number(a.valor) + Number(b.valor));
-      carrinho = req.body.carrinho;
+    if (req.body.loggedUser == true) {
+      const carrinho = req.body.carrinho;
+      const totalCompra = carrinho.reduce((a, b) => a.valor + b.valor);
+      const userEmail = req.session.email;
 
-      // ADD THESES DATA TO THE DATABASE
+      // TABELA DE ORDENS DE COMPRA
+      // INSERIR ESSA COMPRA COM O TOTAL, EMAIL E HORÁRIO --> ID DA COMPRA
 
-      res.send({ ...userEmail })
+      // TABELA DE ITENS DA COMPRA
+      // PARA CADA ITEM DO CARRINHO, INSERIR NO BANCO DE DADOS, O ID DA COMPRA, O ID DO PRODUTO E A QUANTIDADE
+
+      // RETORNAR NA REQUISIÇÃO O ID E O VALOR DA COMPRA
+      res.send(JSON.stringify(totalCompra));
     } else {
-      res.send({
-        result: "bad",
-      })
+      res.send("User not logged");
     }
+
+    //   // ADD THESES DATA TO THE DATABASE
+
+    //   res.send({ ...userEmail })
+    // } else {
+    //   res.send({
+    //     result: "bad",
+    //   })
+    // }
   }
 }
 
