@@ -87,6 +87,7 @@ const productsController = {
     },
     addProduct: (req, res) => {
         const productData = req.body;
+        console.log(productData)
         const parsedProductData = {
             ...productData,
             category: parseInt(productData.category),
@@ -97,10 +98,13 @@ const productsController = {
             res.render('admin/addProduct');
         }).catch((error) => {
             res.send("An error ocurred when trying to add a new product: " + error);
+            console.log(error)
         })
     },
-    addProductView: (req, res) => {
-        res.render('admin/addProduct')
+    addProductView: async (req, res) => {
+        const category = await db.Category.findAll()
+        
+        res.render('admin/addProduct',{category})
     },
     deleteProduct: (req, res) => {
         const productId = req.body.productId;

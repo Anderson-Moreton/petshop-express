@@ -18,6 +18,7 @@ function adicionar(novoItem) {
 }
 
 function remover(itemCarrinho) {
+  console.log("passei aqui ",{itemCarrinho})
   //Montar o carrinho a partir do cookie ou do localStorage
   const carrinho = localStorage.getItem('carrinho')
     ? JSON.parse(localStorage.getItem('carrinho'))
@@ -25,9 +26,11 @@ function remover(itemCarrinho) {
 
   // Alterar a quantidade
   const produtoNoCarrinho = carrinho.find((p) => p.id === itemCarrinho.id);
+  console.log("produtos no carrinho ",{carrinho})
   if (produtoNoCarrinho) {
     //Alterar a quantidade
-    produtoNoCarrinho.quantidade = produtoNoCarrinho.quantidade - 1;
+    console.log("passei aqui 1")
+    produtoNoCarrinho.quantidade = produtoNoCarrinho.quantidade -1;
     //const copia =  {...produtoNoCarrinho}
   }
   //Remover o produto do array carrinho
@@ -60,12 +63,15 @@ function exibirCarrinho() {
         </h3>
         <h3>
         ${produto.quantidade}
-
+      
         </h3>
+        <h3>
+        ${produto.valor}
+     </h3>
     </div>
     <div class="product-offer-button">
         <button
-            onclick="remover({quantidade:1, nome:'<%=${produto.nome}%>', valor:'<%=${produto.valor}%>', foto:'/img/burguer04.jpg'})">Remover</button>
+            onclick="remover({id:'${produto.id}', quantidade:1, nome:'${produto.nome}', valor:'${produto.valor}', foto:'/img/burguer04.jpg'})">Remover</button>
     </div>
 </div> `;
   });
