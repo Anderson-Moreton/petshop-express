@@ -32,10 +32,10 @@ const cartController = {
 
         res.send(JSON.stringify({ "orderId": order.id }));
       }).catch((error) => {
-        res.send("An error has ocurred when trying to finish order: " + error);
+        res.send(JSON.stringify({ "error": "An error has ocurred when trying to finish order: " + error }));
       })
     } else {
-      res.send("User not logged");
+      res.send(JSON.stringify({ "error": "Usuário não logado no sistema. Faça o login e tente novamente." }));
     }
   }
 }

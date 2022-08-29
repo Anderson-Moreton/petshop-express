@@ -22,27 +22,42 @@
                 <img class="style-image" src="/img/foto home.jpg" alt="">
                 <p class="style-title">Home</p>
             </section>
-            <section>
-                <div class="container">
-                    <div class="tituloPrincipal">
-                        <h2>Mais Vendidos</h2>
-                    </div>
-                </div>
-            </section>
-            <section class="sale">
+            <section class="column-box">
+                <h2>Hamburgueres</h2>
                 <div class="row-box">
-                    <% produtos.forEach(function(product){ %>
-                        <%- include ('./partials/productOffer', { productId: product.id, productImage: "/img/venda1.svg"
-                            , productName: product.name, productPrice: product.price }) %>
+                    <% produtos.burguer?.forEach(function(product){ %>
+                        <%- include ('./partials/productOffer', { productId: product.id, productIllustration:
+                            product.illustration , productName: product.name, productPrice: product.price }) %>
                             <% }) %>
-                          
                 </div>
             </section>
+            <section class="column-box">
+                <h2>Hotdog</h2>
+                <div class="row-box">
+                    <% produtos.dog?.forEach(function(product){ %>
+                        <%- include ('./partials/productOffer', { productId: product.id, productIllustration:
+                            product.illustration , productName: product.name, productPrice: product.price }) %>
+                            <% }) %>
+                </div>
+            </section>
+            <section class="column-box">
+                <h2>Bebidas</h2>
+                <div class="row-box">
+                    <% produtos.drink?.forEach(function(product){ %>
+                        <%- include ('./partials/productOffer', { productId: product.id, productIllustration:
+                            product.illustration, productName: product.name, productPrice: product.price }) %>
+                            <% }) %>
+                </div>
             </section>
     </main>
     <footer>
         <%-include ('./partials/footer') %>
     </footer>
 </body>
+<script>
+    function addProductToCartButtonClick() {
+        alert("Excelente escolha! Seu produto foi adicionado ao carrinho.");
+    }
+</script>
 
 </html>
