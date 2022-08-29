@@ -50,8 +50,10 @@ form span {
 }
 
 h2 {
-    margin: 25px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 30px;
+    font-weight: 100;
 }
 
 p {
@@ -143,8 +145,11 @@ a {
 .row-box {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
+    row-gap: 3rem;
+    padding: 1rem;
+    justify-content: center;
 }
 
 .column-box {
@@ -152,6 +157,8 @@ a {
     flex-direction: column;
     width: 100%;
     margin-block: 0.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-section {
@@ -163,9 +170,10 @@ a {
 
 .product-offer-image {
     width: 20rem;
-    height: 100%;
+    height: 15rem;
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
 }
 
 .product-offer-container {
@@ -174,6 +182,7 @@ a {
     border: 1px solid #312F2F;
     border-radius: 6px;
     height: min-content;
+    width: min-content;
 }
 
 .product-offer-details {

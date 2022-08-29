@@ -1,4 +1,4 @@
-const {validationResult}= require('express-validator')
+const { validationResult } = require('express-validator')
 const db = require('../models')
 const userController = {
     loginPage: (req, res) => {
@@ -9,7 +9,7 @@ const userController = {
         const context = {}
         res.render('register', context);
     },
-    login: (req,res) => {
+    login: (req, res) => {
         const { email, password } = req.body;
         req.session.loggedUser = true;
         req.session.email = email;
@@ -17,38 +17,39 @@ const userController = {
 
         res.redirect('/');
     },
-    register:async(req, res,next) => {
-        
+    register: async (req, res, next) => {
+
         const errors = validationResult(req)
         console.log(errors)
-        if(!errors.isEmpty()) {
+        if (!errors.isEmpty()) {
             console.log(errors.mapped())
-            return res.render('register',{errors:errors.mapped(),old:req.body})
-        }else{
-        const { name,email,password,birthday,cellphone,cep,addressNumber,addressComplement,address,city,state } = req.body;
-        req.session.loggedUser = true;
-        req.session.email = email;
-        req.session.password = password;
-         const registrationform =await db.registrationForm.create({
-            name,
-            email,
-            password,
-            birthday,
-            cellphone,
-            cep,
-            addressNumber,
-            addressComplement,
-            address,
-            city,
-            state 
+            return res.render('register', { errors: errors.mapped(), old: req.body })
+        } else {
+            const { name, email, password, birthday, cellphone, cep, addressNumber, addressComplement, address, city, state } = req.body;
+            req.session.loggedUser = true;
+            req.session.email = email;
+            req.session.password = password;
 
-        });
-        
-         return registrationform,res.redirect('/');
-  
+            const registrationform = await db.registrationForm.create({
+                name,
+                email,
+                password,
+                birthday,
+                cellphone,
+                cep,
+                addressNumber,
+                addressComplement,
+                address,
+                city,
+                state
 
-      
-    }
+            });
+
+            return registrationform, res.redirect('/');
+
+
+
+        }
     },
     logout: (req, res) => {
         req.session.loggedUser = false;
