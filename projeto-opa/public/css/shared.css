@@ -142,7 +142,7 @@ a {
 
 }
 
-.row-box {
+/* .row-box {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -159,6 +159,38 @@ a {
     margin-block: 0.5rem;
     justify-content: center;
     align-items: center;
+} */
+.column-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    row-gap: 3rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.column-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 0.5rem;
+} 
+
+.row-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }
 
 .form-section {
