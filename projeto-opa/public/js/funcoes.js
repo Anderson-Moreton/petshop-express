@@ -31,7 +31,7 @@ function remover(itemCarrinho) {
   localStorage.setItem('carrinho', JSON.stringify(copiaCarrinho));
   exibirCarrinho();
 }
-
+  console.log('os itens no local e ',localStorage.length)
 function exibirCarrinho() {
   const carrinhoTela = document.getElementById('carrinho');
 
@@ -41,6 +41,7 @@ function exibirCarrinho() {
 
   carrinhoTela.innerHTML = '';
   carrinho.map((produto) => {
+   const subtotal=(produto.quantidade * produto.valor).toFixed(2) 
     carrinhoTela.innerHTML += ` 
   <article>
     <div class="product-offer-container">
@@ -59,12 +60,21 @@ function exibirCarrinho() {
       <a>
         Quantidade:
       <a>
-        ${produto.quantidade}
-      </a>
+      ${produto.quantidade}
+       </a>
+         </div>
+      <div class="product-offer-details">
+      Subtotal R$ :
+      <a>
+           ${subtotal}
+         
+    </a>
+    
       </div>
       <div class="product-offer-button">
           <button
               onclick="remover({id:'${produto.id}', quantidade:1, nome:'${produto.nome}', valor:'${produto.valor}', foto:'/img/burguer04.jpg'})">Remover</button>
+              
       </div>
     </div> 
   </article>
