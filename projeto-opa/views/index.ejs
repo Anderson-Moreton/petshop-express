@@ -22,27 +22,27 @@
                 <img class="style-image" src="/img/foto home.jpg" alt="">
                 <p class="style-title">Home</p>
             </section>
-            <section class="column-box">
+            <section class="column-card">
                 <h2>Hamburgueres</h2>
-                <div class="row-box">
+                <div class="row-card">
                     <% produtos.burguer?.forEach(function(product){ %>
                         <%- include ('./partials/productOffer', { productId: product.id, productIllustration:
                             product.illustration , productName: product.name, productPrice: product.price }) %>
                             <% }) %>
                 </div>
             </section>
-            <section class="column-box">
+            <section class="column-card">
                 <h2>Hotdog</h2>
-                <div class="row-box">
+                <div class="row-card">
                     <% produtos.dog?.forEach(function(product){ %>
                         <%- include ('./partials/productOffer', { productId: product.id, productIllustration:
                             product.illustration , productName: product.name, productPrice: product.price }) %>
                             <% }) %>
                 </div>
             </section>
-            <section class="column-box">
+            <section class="column-card">
                 <h2>Bebidas</h2>
-                <div class="row-box">
+                <div class="row-card">
                     <% produtos.drink?.forEach(function(product){ %>
                         <%- include ('./partials/productOffer', { productId: product.id, productIllustration:
                             product.illustration, productName: product.name, productPrice: product.price }) %>

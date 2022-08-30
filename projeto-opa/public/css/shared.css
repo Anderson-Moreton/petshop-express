@@ -2,6 +2,26 @@
     margin: 0;
 }
 
+.logo {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.logo:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.itemMenu {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.itemMenu:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
 main {
     margin-block-end: 3rem;
 }
@@ -113,7 +133,7 @@ button.button-inverse:hover {
     opacity: 70%;
 }
 
-.style-title{
+.style-title {
     position: absolute;
     width: 100%;
     height: fit-content;
@@ -139,10 +159,18 @@ button.button-inverse:hover {
 
 a {
     text-decoration: none;
-
 }
 
-.row-box {
+.column-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-card {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -157,8 +185,13 @@ a {
     flex-direction: column;
     width: 100%;
     margin-block: 0.5rem;
-    justify-content: center;
+} 
+
+.row-box {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: 1rem;
 }
 
 .form-section {
@@ -168,21 +201,36 @@ a {
     justify-content: center;
 }
 
+/*Card Menu*/
 .product-offer-image {
-    width: 20rem;
-    height: 15rem;
+    width: 95%;
+    height: 230px;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
+    margin: 6px 6px 10px 6px;
+    border-radius: 6px;
+    border: 1px #312F2F solid;
 }
 
 .product-offer-container {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.product-offer-container:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.product-offer-container { 
+    width: 300px;
+    height: 340px;
     background-color: #CEDADA;
     color: #312F2F;
-    border: 1px solid #312F2F;
+    border: 1px #312F2F solid;
     border-radius: 6px;
-    height: min-content;
-    width: min-content;
+    margin: 10px;
 }
 
 .product-offer-details {
@@ -191,7 +239,7 @@ a {
     padding: 1rem 1rem 0rem 1rem;
 }
 
-.product-offer-button{
+.product-offer-button {
     position: relative;
     display: flex;
     align-items: center;
@@ -204,8 +252,7 @@ a {
     background-color: #FEF29A;
 }
 
-.produto img{
+/* .produto img {
     width: 250px;
     height: 250px;
-
-}
+} */
