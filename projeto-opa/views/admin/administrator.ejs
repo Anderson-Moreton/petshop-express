@@ -33,81 +33,67 @@
             <div class="container">
                 <div class="categoriesAdm">
                     <ul>
+                        <!-- TODO -> CONSERTAR ANIMAÇÃO E COR -->
                         <div class="categoriesItem">
-                            <li><a href="addProduct.ejs">Cadastrar Produto</a></li>
+                            <li><a href="/admin/products/addProducts">Cadastrar Produto</a></li>
                         </div>
                         <div class="categoriesItem">
-                            <li><a href=".ejs">Produtos Cadastrados</a></li>
+                            <li><a href="/admin/login/enter">Produtos Cadastrados</a></li>
                         </div>
                         <div class="categoriesItem">
-                            <li><a href=".ejs">Editar Categoria</a></li>
+                            <li><a href="/">Editar Categoria</a></li>
+                            <!-- TODO -> CRIAR ROTA E CONTROLLER PARA PÁGINA DE CATEGORIAS -->
                         </div>
                     </ul>
                 </div>
             </div>
         </section>
-
         <section>
             <div class="container">
-                <h5>Cadastrar Produto</h5>
-                <form id="addProductForm" method="post">
-                    <div class="form-section">
-                        <span>Dados do Produto</span>
-                        <div class="column-box">
-                            <label for="name">Nome</label>
-                            <input type="text" name="name" />
-                        </div>
-                        <div class="column-box">
-                            <label for="category">Categoria</label>
-
-
-                            <select name="category">
-                                <option disabled selected>Selecione a categoria</option>
-                                <option value="1"> hamburguer</option>
-                                <option value="2">dog</option>
-                                <option value="3">Bebida</option>
-                                <option value="4">Combo</option>
-                            </select>
-
-                        </div>
-                        <div class="column-box">
-                            <label for="price">Preço</label>
-                            <input type="text" name="price" />
-                        </div>
-                        <div class="form-section">
-                            <button type="button" id="addProductButton" style="margin: auto;">Adicionar</button>
-                        </div>
-                </form>
-            </div>
-        </section>
-        <div id="successModal" class="modal">
-            <div class="modal-content">
-                <img class="modal-icon" src="/img/success-icon.svg" />
-                <div class="modal-text">O produto foi adicionado com sucesso!</div>
-                <button class="buttonBack" >Volta</button>
-            </div>
-        </div>
-        <div id="failModal" class="modal">
-            <div class="modal-content">
-                <img class="modal-icon" src="img/error-icon.svg" />
-                <div class="modal-text">Houve um erro ao cadastrar produto.</div>
-            </div>
-        </div>
-
-        <section>
-            <div class="container">
-                <h5>Editar produtos</h5>
                 <div class="row-box">
                     <div class="listProducts">
-                        <select class="categoryProduct" name="category">
-                            <option disabled selected>Selecione a categoria</option>
-                            <option value="1"> hamburguer</option>
-                            <option value="2">dog</option>
-                            <option value="3">Bebida</option>
-                            <option value="4">Combo</option>
-                        </select>
-                        <div class="editProduct">
-                            <!-- Adicionar Categoria Aqui -->
+                        <table>
+                            <thead>
+                                <th>
+                                    Nome
+                                </th>
+                                <th>
+                                    Preço
+                                </th>
+                                <th>
+                                    Categoria
+                                </th>
+                                <th>
+                                    Editar
+                                </th>
+                                <th>
+                                    Excluir
+                                </th>
+                            </thead>
+                            <tbody>
+                                <% produtos?.forEach(produto=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= produto.name %>
+                                        </td>
+                                        <td>
+                                            <%= produto.price %>
+                                        </td>
+                                        <td>
+                                            <%= produto.categoryId %>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="buttonEdit">Editar</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="buttonDelete"
+                                                onclick="location.href='registrar'">Excluir</button>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                        <!-- <div class="editProduct">
                             <div class="insertProductList">
                                 <p>Dogão Opa</p>
                                 <p>Dogs</p>
@@ -120,41 +106,29 @@
                                 <button type="button" class="buttonDelete"
                                     onclick="location.href='registrar'">Excluir</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </section>
-
-        <section>
-            <div class="container">
-                <h5>Editar categorias</h5>
-                <div class="row-box">
-                    <div class="editCategorie">
-                        <div class="categorie">
-                            <!-- Adicionar Categoria Aqui -->
-                            <div class="insertCategories">
-                                <h4>Bebidas</h4>
-                            </div>
-                            <div class="buttonProduct">
-                                <button type="submit" class="buttonAdd">Adicionar</button>
-                                <button type="submit" class="buttonEdit">Editar</button>
-                                <button type="button" class="buttonDelete"
-                                    onclick="location.href='registrar'">Excluir</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <img class="modal-icon" src="/img/success-icon.svg" />
+                <div class="modal-text">O produto foi adicionado com sucesso!</div>
+                <button class="buttonBack">Volta</button>
             </div>
-        </section>
-
+        </div>
+        <div id="failModal" class="modal">
+            <div class="modal-content">
+                <img class="modal-icon" src="img/error-icon.svg" />
+                <div class="modal-text">Houve um erro ao cadastrar produto.</div>
+            </div>
+        </div>
     </main>
     <footer>
 
         <%-include ('../partials/footer') %>
     </footer>
-
-
 </body>
 
 <script>
