@@ -30,7 +30,7 @@ const userController = {
             req.session.email = email;
             req.session.password = password;
 
-            const registrationform = await db.registrationForm.create({
+            const registrationform = await db.User.create({
                 name,
                 email,
                 password,
