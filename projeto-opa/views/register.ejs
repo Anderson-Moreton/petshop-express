@@ -88,7 +88,7 @@
                         <div class="row-box">
                             <div class="column-box">
                                 <label for="cep">CEP</label>
-                                <input type="cep" name="cep" value="<%= locals.old && old.cep %>" />
+                                <input type="text" id="cep" name="cep" value="<%= locals.old && old.cep %>" minlength="8" maxlength="8" />
                                 <% if(locals.errors && errors.cep){%>
                                     
 
@@ -116,58 +116,45 @@
                         </div>
                         <div class="row-box">
                             <div class="column-box">
-                                <label for="address">Endereço</label>
-                                <input type="address" name="address" value="<%= locals.old && old.address %>"/>
-                                <% if(locals.errors && errors.address){%>
-                                    
-
-                                    <b class="alert"><%= errors.address.address %>*Este campo é obrigatorio</b>
-                                    <% } %>
-                            </div>
-                        </div>
-                        <div class="row-box">
-                            <div class="column-box">
                                 <label for="city">Cidade</label>
-                                <input type="city" name="city"value="<%= locals.old && old.city %>"/>
+                                  <input type="text" id="city" name="city"value="<%= locals.old && old.city %>"/>
                                 <% if(locals.errors && errors.city){%>
                                     
 
                                     <b class="alert"><%= errors.city.city %>*Este campo é obrigatorio</b>
                                     <% } %>
                             </div>
+                        </div>
+                        <div class="row-box">
+                            <div class="column-box">
+                                <label for="address">Bairro</label>
+                                <input type="address "id="district" name="address" value="<%= locals.old && old.address %>"/>
+                                <% if(locals.errors && errors.address){%>
+                                    
+                                
+                                    <b class="alert"><%= errors.address.address %>*Este campo é obrigatorio</b>
+                                    <% } %>
+                              
+                            </div>
+                            <div class="column-box">
+                                <label for="avenue">Rua/Avenida</label>
+                                <input type="text"id="avenue" name="avenue" value="<%= locals.old && old.avenue %>"/>
+                                <% if(locals.errors && errors.avenue){%>
+                                    
+                                
+                                    <b class="alert"><%= errors.avenue.avenue %>*Este campo é obrigatorio</b>
+                                    <% } %>
+                              
+                            </div>
                             <div class="column-box">
                                 <label for="state">Estado</label>
-                                <select name="state" >
-                                   <option value="Bahia"></option>
-                                   <option disabled selected>Selecione seu estado</option>
-                                   <option value="ac">Acre</option>
-                                   <option value="al">Alagoas</option>
-                                   <option value="ap">Amapá</option>
-                                   <option value="am">Amazonas</option>
-                                   <option value="ba">Bahia</option>
-                                   <option value="ce">Ceará</option>
-                                   <option value="df">Distrito Federal</option>
-                                   <option value="es">Espírito Santo</option>
-                                   <option value="go">Goiás</option>
-                                   <option value="ma">Maranhão</option>
-                                   <option value="mt">Mato Grosso</option>
-                                   <option value="ms">Mato Grosso do Sul</option>
-                                   <option value="mg">Minas Gerais</option>
-                                   <option value="pa">Pará</option>
-                                   <option value="pb">Paraíba</option>
-                                   <option value="pr">Paraná</option>
-                                   <option value="pe">Pernambuco</option>
-                                   <option value="pi">Piauí</option>
-                                   <option value="rj">Rio de Janeiro</option>
-                                   <option value="rn">Rio Grande do Norte</option>
-                                   <option value="rs">Rio Grande do Sul</option>
-                                   <option value="ro">Rondônia</option>
-                                   <option value="rr">Roraima</option>
-                                   <option value="sc">Santa Catarina</option>
-                                   <option value="sp">São Paulo</option>
-                                   <option value="se">Sergipe</option>
-                                   <option value="to">Tocantins</option>
-                                </select>
+                                <input type="text" id="state" name="state"value="<%= locals.old && old.state %>">
+                                <% if(locals.errors && errors.state){%>
+                                    
+
+                                    <b class="alert"><%= errors.state.state %>*Este campo é obrigatorio</b>
+                                    <% } %>
+                              
                             </div>
                         </div>
                     </div>
@@ -183,7 +170,10 @@
         <%-include ('./partials/footer') %>
     </footer>
 
+   <script src="/js/register.js"> </script>
+  
 
+  
 </body>
 
 </html>

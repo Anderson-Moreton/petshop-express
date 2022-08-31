@@ -20,7 +20,8 @@ const validations = [
     body('addressComplement').notEmpty().withMessage("Nome nao pode ser vazio!"),
     body('address').notEmpty().withMessage("Nome nao pode ser vazio!"),
     body('city').notEmpty().withMessage(" nao pode ser vazio!"),
-    body('state').notEmpty().withMessage("Nome nao pode ser vazio!")
+    body('state').notEmpty().withMessage("Nome nao pode ser vazio!"),
+    body('avenue').notEmpty().withMessage("Nome nao pode ser vazio!")
 ]
 const validationsContact = [
     body('name').notEmpty(),

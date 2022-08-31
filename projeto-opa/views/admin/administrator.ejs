@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/cadastro.css">
     <link rel="stylesheet" href="/css/partials/modal.css">
+    <link rel="stylesheet" href="shared.css">
     <title>Opa Dog e Burguer</title>
 </head>
 
@@ -142,7 +143,6 @@
                                     onclick="location.href='registrar'">Excluir</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -178,6 +178,7 @@
             }
         }).catch(error => {
             failModal.style.display = "block";
+
         });
 
         document.querySelector('.buttonBack').addEventListener('click', () => {
