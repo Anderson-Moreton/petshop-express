@@ -159,41 +159,13 @@ button.button-inverse:hover {
 
 a {
     text-decoration: none;
-}
 
-.column-card {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-block: 0.5rem;
-    justify-content: center;
-    align-items: center;
 }
-
-<<<<<<< HEAD
-/* .row-box {
-=======
-.row-card {
->>>>>>> 0b4fd5568121b65214f1035d859f302239354c4c
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    row-gap: 3rem;
-    padding: 1rem;
-    justify-content: center;
-}
-
-.column-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-block: 0.5rem;
-} 
 
 .row-box {
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     align-items: center;
 <<<<<<< HEAD
 } */
@@ -227,9 +199,6 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-=======
->>>>>>> 0b4fd5568121b65214f1035d859f302239354c4c
-    gap: 1rem;
 }
 
 .form-section {
@@ -314,83 +283,5 @@ a {
 /* .produto img {
     width: 250px;
     height: 250px;
-} */
 
-/* Edit Products */
-.container h5 {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
-
-.categoryProduct {
-    width: 30%;
-    margin-bottom: 20px;
-    background-color: white;
-}
-
-.editProduct p {
-    font-size: 18px;
-}
-
-.buttonProduct {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.buttonProduct button {
-    margin-left: 10px;
-}
-
-/* -----Edit Categories----- */
-.buttonAdd, .buttonEdit {    
-    font-family: "Righteous", sans-serif;
-    font-size: medium;
-    background-color: #90FA7F;
-    height: 2rem;
-    border-radius: 30px;
-    border-width: 1px;
-    margin-bottom: 1rem;
-    transition-property: background-color;
-    transition-duration: 100ms;
-    padding-inline: 1rem;
-}
-
-button:hover {
-    background-color: #539449;
-}
-
-button.buttonDelete:hover {
-    background-color: #fa5c5c;
-}
-
-.buttonDelete {
-    background-color: #FFB6B6;
-    color: #312F2F;
-}
-
-
-
-.editCategorie, .listProducts {
-    background-color: #FEF29A;
-    border: #312F2F 1px solid;
-    border-radius: 6px;
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.editCategorie h4 {
-    margin-top: 3px;
-    font-size: 20px;
-}
-
-.categorie, .editProduct {
-    display: flex;
-    flex-direction: row;
-}
-/* -----Edit Categories----- */
