@@ -26,7 +26,7 @@ app.use(session({ secret: "segredo" }))
 
 app.use('/', indexRouter);
 app.use('/menu', menuRouter);
-app.use('/admin', adminRouter);
+app.use('/admin', adminRouter); /*Anderson 30/08*/
 
 app.use('/contato', indexRouter);
 app.use('/quemsomos', indexRouter);
