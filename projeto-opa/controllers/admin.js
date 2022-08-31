@@ -9,13 +9,16 @@ const admController = {
         const context = {}
         res.render('register', context);
     },
-    login: (req, res) => {
+    login: async (req, res) => {
         const { email, password } = req.body;
         req.session.loggedUser = true;
         req.session.email = email;
         req.session.password = password;
         // TODO Verificar credenciais
-        res.render('admin/administrator');
+
+        const produtos = await db.Product.findAll()
+        const context = { produtos }
+        res.render('admin/administrator', context);
     },
     register: async (req, res, next) => {
 
