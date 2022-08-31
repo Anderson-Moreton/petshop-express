@@ -127,7 +127,12 @@ const productsController = {
     deleteProductView: (req, res) => {
         res.render('admin/deleteProduct')
     },
+    editProduct: (req, res) => {
+        
+    },
+    editProductView: (req, res) => {
 
+    }
 }
 
 module.exports = productsController;
