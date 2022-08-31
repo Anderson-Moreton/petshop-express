@@ -288,18 +288,32 @@ a {
 
 .categoryProduct {
     width: 30%;
+    margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 40px;
     background-color: white;
 }
 
-.editProduct p {
+.insertProductList, .insertCategories {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.insertProductList p {
     font-size: 18px;
+    width: auto;
+    margin: 0px 20px 0px 20px;  
 }
 
 .buttonProduct {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .buttonProduct button {
@@ -333,8 +347,6 @@ button.buttonDelete:hover {
     color: #312F2F;
 }
 
-
-
 .editCategorie, .listProducts {
     background-color: #FEF29A;
     border: #312F2F 1px solid;
@@ -344,11 +356,6 @@ button.buttonDelete:hover {
     display: flex;
     flex-direction: column;
     padding: 20px;
-}
-
-.editCategorie h4 {
-    margin-top: 3px;
-    font-size: 20px;
 }
 
 .categorie, .editProduct {

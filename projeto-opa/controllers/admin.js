@@ -3,7 +3,7 @@ const db = require('../models')
 const admController = {
     loginPage: (req, res) => {
         const context = {}
-        res.render('administrator', context);
+        res.render('admin/loginAdm', context);
     },
     registerPage: (req, res) => {
         const context = {}
@@ -14,8 +14,8 @@ const admController = {
         req.session.loggedUser = true;
         req.session.email = email;
         req.session.password = password;
-
-        res.redirect('/');
+        // TODO Verificar credenciais
+        res.render('admin/administrator');
     },
     register: async (req, res, next) => {
 
@@ -60,4 +60,4 @@ function loggedUser(req, res, next) {
     }
 }
 
-module.exports = { admController, loggedUser };
+module.exports = admController;
