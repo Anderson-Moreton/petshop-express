@@ -4,7 +4,9 @@ const generalController = require('../controllers/main');
 const contactController = require('../controllers/contact');
 const aboutUsController = require('../controllers/aboutUs');
 const { userController, loggedUser } = require('../controllers/user');
+
 const cartController = require('../controllers/cart');
+
 /*autehentication*/
 const { body } = require('express-validator')
 const validations = [

@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/product');
-const admController = require('../controllers/adm') /*Anderson 30/08*/
-
-
+const admController = require('../controllers/admin');
 
 
 router.get('/products', productsController.getAllProducts);
@@ -20,5 +18,8 @@ router.post('/products/deleteProduct/delete', productsController.deleteProduct);
 
 router.get('/products/editProduct', productsController.editProductView); /*Anderson 30/08*/
 router.post('/products/editProduct/edit', productsController.editProduct); /*Anderson 30/08*/
+
+router.get('/login', admController.loginPage); /*Anderson 30/08*/
+router.post('/login/enter', admController.login);
 
 module.exports = router;

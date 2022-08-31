@@ -159,10 +159,18 @@ button.button-inverse:hover {
 
 a {
     text-decoration: none;
-
 }
 
-.row-box {
+.column-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-card {
     display: flex;
     flex-direction: row;
 
@@ -197,6 +205,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
 }
 
 .form-section {
@@ -281,5 +290,90 @@ a {
 /* .produto img {
     width: 250px;
     height: 250px;
+} */
 
+/* Edit Products */
+.container h5 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
+.categoryProduct {
+    width: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    background-color: white;
+}
+
+.insertProductList, .insertCategories {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.insertProductList p {
+    font-size: 18px;
+    width: auto;
+    margin: 0px 20px 0px 20px;  
+}
+
+.buttonProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.buttonProduct button {
+    margin-left: 10px;
+}
+
+/* -----Edit Categories----- */
+.buttonAdd, .buttonEdit {    
+    font-family: "Righteous", sans-serif;
+    font-size: medium;
+    background-color: #90FA7F;
+    height: 2rem;
+    border-radius: 30px;
+    border-width: 1px;
+    margin-bottom: 1rem;
+    transition-property: background-color;
+    transition-duration: 100ms;
+    padding-inline: 1rem;
+}
+
+button:hover {
+    background-color: #539449;
+}
+
+button.buttonDelete:hover {
+    background-color: #fa5c5c;
+}
+
+.buttonDelete {
+    background-color: #FFB6B6;
+    color: #312F2F;
+}
+
+.editCategorie, .listProducts {
+    background-color: #FEF29A;
+    border: #312F2F 1px solid;
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.categorie, .editProduct {
+    display: flex;
+    flex-direction: row;
+}
+/* -----Edit Categories----- */

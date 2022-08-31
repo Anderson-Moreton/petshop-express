@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Ropa+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="/css/partials/modal.css">
     <link rel="stylesheet" href="shared.css">
     <title>Opa Dog e Burguer</title>
 </head>
@@ -81,7 +84,7 @@
             <div class="modal-content">
                 <img class="modal-icon" src="/img/success-icon.svg" />
                 <div class="modal-text">O produto foi adicionado com sucesso!</div>
-                <button onclick="redirect('/')">Volta</button>
+                <button class="buttonBack" >Volta</button>
             </div>
         </div>
         <div id="failModal" class="modal">
@@ -105,10 +108,12 @@
                         </select>
                         <div class="editProduct">
                             <!-- Adicionar Categoria Aqui -->
-                            <p>Dogão Opa</p>
-                            <p>Dogs</p>
-                            <p>R$30,00</p>
-                            <input type="file" name="" id="">
+                            <div class="insertProductList">
+                                <p>Dogão Opa</p>
+                                <p>Dogs</p>
+                                <p>R$30,00</p>
+                                <input type="file" name="" id="">
+                            </div>
                             <div class="buttonProduct">
                                 <button type="submit" class="buttonAdd">Adicionar</button>
                                 <button type="submit" class="buttonEdit">Editar</button>
@@ -128,37 +133,15 @@
                     <div class="editCategorie">
                         <div class="categorie">
                             <!-- Adicionar Categoria Aqui -->
-                            <h4>Bebidas</h4>
-                            <div class="buttonProduct">
-                                <button type="submit" class="buttonAdd">Adicionar categoria</button>
-                                <button type="submit" class="buttonEdit">Editar categoria</button>
-                                <button type="button" class="buttonDelete" onclick="location.href='registrar'">Excluir
-                                    Categoria</button>
+                            <div class="insertCategories">
+                                <h4>Bebidas</h4>
                             </div>
-                        </div>
-                        <div class="categorie">
-                            <!-- Adicionar Categoria Aqui -->
-                            <h4>Burgueres</h4>
-                            <button type="submit" class="buttonAdd">Adicionar categoria</button>
-                            <button type="submit" class="buttonEdit">Editar categoria</button>
-                            <button type="button" class="buttonDelete" onclick="location.href='registrar'">Excluir
-                                Categoria</button>
-                        </div>
-                        <div class="categorie">
-                            <!-- Adicionar Categoria Aqui -->
-                            <h4>Combos</h4>
-                            <button type="submit" class="buttonAdd">Adicionar categoria</button>
-                            <button type="submit" class="buttonEdit">Editar categoria</button>
-                            <button type="button" class="buttonDelete" onclick="location.href='registrar'">Excluir
-                                Categoria</button>
-                        </div>
-                        <div class="categorie">
-                            <!-- Adicionar Categoria Aqui -->
-                            <h4>Dogs</h4>
-                            <button type="submit" class="buttonAdd">Adicionar categoria</button>
-                            <button type="submit" class="buttonEdit">Editar categoria</button>
-                            <button type="button" class="buttonDelete" onclick="location.href='registrar'">Excluir
-                                Categoria</button>
+                            <div class="buttonProduct">
+                                <button type="submit" class="buttonAdd">Adicionar</button>
+                                <button type="submit" class="buttonEdit">Editar</button>
+                                <button type="button" class="buttonDelete"
+                                    onclick="location.href='registrar'">Excluir</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,7 +178,12 @@
             }
         }).catch(error => {
             failModal.style.display = "block";
-        })
+
+        });
+
+        document.querySelector('.buttonBack').addEventListener('click', () => {
+            document.querySelector('.modal').style.display = "none"
+        });
     }
 </script>
 
