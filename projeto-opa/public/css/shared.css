@@ -165,10 +165,8 @@ a {
 .row-box {
     display: flex;
     flex-direction: row;
-<<<<<<< HEAD
-    align-items: center;
-<<<<<<< HEAD
-} */
+
+} 
 .column-card {
     display: flex;
     flex-direction: column;
