@@ -171,10 +171,14 @@ a {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* .row-box {
 =======
 .row-card {
 >>>>>>> 0b4fd5568121b65214f1035d859f302239354c4c
+=======
+.row-card {
+>>>>>>> 637bbd4b85ed12bf59b49d5a1aff8ac4dafc6eec
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -194,6 +198,7 @@ a {
 .row-box {
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     align-items: center;
 <<<<<<< HEAD
 } */
@@ -229,6 +234,9 @@ a {
     align-items: center;
 =======
 >>>>>>> 0b4fd5568121b65214f1035d859f302239354c4c
+=======
+    align-items: center;
+>>>>>>> 637bbd4b85ed12bf59b49d5a1aff8ac4dafc6eec
     gap: 1rem;
 }
 
@@ -323,6 +331,7 @@ a {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+<<<<<<< HEAD
 
 .categoryProduct {
     width: 30%;
@@ -358,6 +367,43 @@ a {
     padding-inline: 1rem;
 }
 
+=======
+
+.categoryProduct {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.editProduct p {
+    font-size: 18px;
+}
+
+.buttonProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.buttonProduct button {
+    margin-left: 10px;
+}
+
+/* -----Edit Categories----- */
+.buttonAdd, .buttonEdit {    
+    font-family: "Righteous", sans-serif;
+    font-size: medium;
+    background-color: #90FA7F;
+    height: 2rem;
+    border-radius: 30px;
+    border-width: 1px;
+    margin-bottom: 1rem;
+    transition-property: background-color;
+    transition-duration: 100ms;
+    padding-inline: 1rem;
+}
+
+>>>>>>> 637bbd4b85ed12bf59b49d5a1aff8ac4dafc6eec
 button:hover {
     background-color: #539449;
 }

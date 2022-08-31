@@ -3,7 +3,6 @@ const router = express.Router();
 const productsController = require('../controllers/product');
 const admController = require('../controllers/adm') /*Anderson 30/08*/
 
-// router.get('/admin', admController.); /*Anderson 30/08*/
 router.get('/products', productsController.getAllProducts);
 router.get('/products/id/:id', productsController.getProductById);
 router.get('/products/name/:name', productsController.getProductByName);
