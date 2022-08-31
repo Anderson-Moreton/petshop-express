@@ -1,9 +1,9 @@
 const { validationResult } = require('express-validator')
 const db = require('../models')
-const userController = {
+const admController = {
     loginPage: (req, res) => {
         const context = {}
-        res.render('login', context);
+        res.render('administrator', context);
     },
     registerPage: (req, res) => {
         const context = {}
@@ -25,29 +25,18 @@ const userController = {
             console.log(errors.mapped())
             return res.render('register', { errors: errors.mapped(), old: req.body })
         } else {
-            const { name, email, password, birthday, cellphone, cep, addressNumber, addressComplement, address, city, state } = req.body;
+            const { email, password, state } = req.body;
             req.session.loggedUser = true;
             req.session.email = email;
             req.session.password = password;
 
             const registrationform = await db.registrationForm.create({
-                name,
                 email,
                 password,
-                birthday,
-                cellphone,
-                cep,
-                addressNumber,
-                addressComplement,
-                address,
-                city,
                 state
-
             });
 
             return registrationform, res.redirect('/');
-
-
 
         }
     },
@@ -71,9 +60,4 @@ function loggedUser(req, res, next) {
     }
 }
 
-module.exports = { userController, loggedUser };
-
-
-
-
-
+module.exports = { admController, loggedUser };

@@ -6,8 +6,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "db_dev_opa",
+    "password": null, // 
+    "database": "opa_db_dev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

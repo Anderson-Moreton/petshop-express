@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
     },
-    category: {
+    categoryId: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Categories',
@@ -20,6 +20,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     price: {
       type: DataTypes.FLOAT
+    },
+    illustration: {
+      type: DataTypes.STRING
     }
   }, {
     sequelize,

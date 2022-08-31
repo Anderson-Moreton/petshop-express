@@ -2,6 +2,26 @@
     margin: 0;
 }
 
+.logo {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.logo:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.itemMenu, .categoriesItem {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.itemMenu, .categoriesItem:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
 main {
     margin-block-end: 3rem;
 }
@@ -50,8 +70,10 @@ form span {
 }
 
 h2 {
-    margin: 25px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 30px;
+    font-weight: 100;
 }
 
 p {
@@ -111,7 +133,7 @@ button.button-inverse:hover {
     opacity: 70%;
 }
 
-.style-title{
+.style-title {
     position: absolute;
     width: 100%;
     height: fit-content;
@@ -137,14 +159,25 @@ button.button-inverse:hover {
 
 a {
     text-decoration: none;
-
 }
 
-.row-box {
+.column-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-card {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
+    row-gap: 3rem;
+    padding: 1rem;
+    justify-content: center;
 }
 
 .column-box {
@@ -152,6 +185,13 @@ a {
     flex-direction: column;
     width: 100%;
     margin-block: 0.5rem;
+} 
+
+.row-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }
 
 .form-section {
@@ -161,19 +201,36 @@ a {
     justify-content: center;
 }
 
+/*Card Menu*/
 .product-offer-image {
-    width: 20rem;
-    height: 100%;
+    width: 95%;
+    height: 230px;
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
+    margin: 6px 6px 10px 6px;
+    border-radius: 6px;
+    border: 1px #312F2F solid;
 }
 
 .product-offer-container {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.product-offer-container:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.product-offer-container { 
+    width: 300px;
+    height: 340px;
     background-color: #CEDADA;
     color: #312F2F;
-    border: 1px solid #312F2F;
+    border: 1px #312F2F solid;
     border-radius: 6px;
-    height: min-content;
+    margin: 10px;
 }
 
 .product-offer-details {
@@ -182,7 +239,7 @@ a {
     padding: 1rem 1rem 0rem 1rem;
 }
 
-.product-offer-button{
+.product-offer-button {
     position: relative;
     display: flex;
     align-items: center;
@@ -194,3 +251,108 @@ a {
 .button-secondary {
     background-color: #FEF29A;
 }
+
+/* Administrator Page*/
+.categoriesAdm {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.categoriesAdm ul {
+    display: flex;
+    justify-content: space-around; 
+}
+
+.categoriesAdm li {
+    list-style-type: none;
+    font-size: 20px; 
+    margin: 30px 120px 30px 120px;
+}
+
+.categoriesAdm a {
+    color: #312F2F;  
+}
+
+/* .produto img {
+    width: 250px;
+    height: 250px;
+} */
+
+/* Edit Products */
+.container h5 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.categoryProduct {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.editProduct p {
+    font-size: 18px;
+}
+
+.buttonProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.buttonProduct button {
+    margin-left: 10px;
+}
+
+/* -----Edit Categories----- */
+.buttonAdd, .buttonEdit {    
+    font-family: "Righteous", sans-serif;
+    font-size: medium;
+    background-color: #90FA7F;
+    height: 2rem;
+    border-radius: 30px;
+    border-width: 1px;
+    margin-bottom: 1rem;
+    transition-property: background-color;
+    transition-duration: 100ms;
+    padding-inline: 1rem;
+}
+
+button:hover {
+    background-color: #539449;
+}
+
+button.buttonDelete:hover {
+    background-color: #fa5c5c;
+}
+
+.buttonDelete {
+    background-color: #FFB6B6;
+    color: #312F2F;
+}
+
+
+
+.editCategorie, .listProducts {
+    background-color: #FEF29A;
+    border: #312F2F 1px solid;
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.editCategorie h4 {
+    margin-top: 3px;
+    font-size: 20px;
+}
+
+.categorie, .editProduct {
+    display: flex;
+    flex-direction: row;
+}
+/* -----Edit Categories----- */
